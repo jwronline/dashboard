@@ -1,26 +1,22 @@
 # the language
-lang:
+lang: nl
 # author info
 author:
-  name:
-  email:
-  twitter:
+  name: Haroen Viaene
+  email: hell@haroen.me
+  twitter: @haroenv
 # title and description
-title:
-description:
+title: dasboard
+description: 'A dashboard for a shuttle mission. See also: https://github.com/jwronline/shuttle-command'
 # the url this will be published at
-url:
-baseurl:
+url: http://gh.jwronline.be/
+baseurl: dashboard
 # the theme colour
 color:
 # location of some files
-css:
-scripts:
-favicon:
-# alternative to JEKYLL_ENV
-development: true
-# google analytics
-analytics:
+css: ['src/style.css']
+scripts: ['src/main.js']
+favicon: ['src/favicon.png']
 #configuration
 sass:
   style: compressed
