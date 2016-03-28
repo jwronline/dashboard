@@ -47,7 +47,6 @@ header {
 
   &__large {
     @media (max-width: 40em) {
-      background-color: green;
       flex-direction: column;
     }
   }
