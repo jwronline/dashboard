@@ -70,7 +70,7 @@ var pollISS = function() {
         },
         "paint": {
           "line-color": "#CCC",
-          "line-width": 8
+          "line-width": 2
         }
       });
     }),

@@ -14,9 +14,14 @@ baseurl: /dashboard/
 # the theme colour
 color:
 # location of some files
-css: ['/dashboard/src/css//style.css','https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css']
-scripts: ['https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js','/dashboard/src/js/main.js']
-favicon: ['src/img/favicon.png']
+css:
+  - '/dashboard/src/css//style.css'
+  - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css'
+scripts:
+  - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js'
+  - 'https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'
+  - '/dashboard/src/js/main.js'
+favicon: 'src/img/favicon.png'
 #configuration
 sass:
   style: compressed
