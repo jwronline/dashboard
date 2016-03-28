@@ -9,7 +9,9 @@ var map = new mapboxgl.Map({
   center: [0, 10],
   zoom: 1
 });
-map.addControl(new mapboxgl.Navigation({position: "top-left"}));
+map.addControl(new mapboxgl.Navigation({
+  position: "top-left"
+}));
 
 var getJSON = function(url) {
   return new Promise(function(resolve, reject) {
@@ -29,29 +31,55 @@ var getJSON = function(url) {
 }
 
 var pollISS = function() {
-  var issLayer = mapboxgl.polyline([]).addTo(map);
+  var geojson = {
+    "type": "geojson",
+    "data": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": []
+      }
+    }
+  }
 
   var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
   var date = new Date();
-  for (var i = 24; i > 0; i--) {
-    if (i !== 24) {
+  for (var i = 400; i > 0; i -= 10) {
+    if (i !== 400) {
       url += ',';
     }
     var temp = new Date();
-    temp.setHours(date.getHours() - i);
-    url += Math.round(temp.getTime() / 1000);
+    temp.setMinutes(date.getMinutes() - i);
+    url += Math.floor(temp.getTime() / 1000);
   }
   getJSON(url)
     .then(function(data) {
       for (var i in data) {
-        polyline.addLatLng(mapboxgl.latLng(data[i].latitude,data[i].longitude));
-        console.log(data[i].latitude,data[i].longitude,data[i].timestamp);
+        // polyline.addLatLng(mapboxgl.latLng(data[i].latitude, data[i].longitude));
+        geojson.data.geometry.coordinates.push([data[i].longitude, data[i].latitude]);
       }
+      map.addSource("route", geojson);
+      map.addLayer({
+        "id": "route",
+        "type": "line",
+        "source": "route",
+        "layout": {
+          "line-join": "round",
+          "line-cap": "round"
+        },
+        "paint": {
+          "line-color": "#CCC",
+          "line-width": 8
+        }
+      });
     }),
     function(status) {
       console.warn(status);
     };
 }
+
+pollISS();
 
 var step = {
   number: 0,
