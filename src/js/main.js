@@ -9,6 +9,7 @@ var map = new mapboxgl.Map({
   center: [0, 10],
   zoom: 1
 });
+map.addControl(new mapboxgl.Navigation({position: "top-left"}));
 
 var getJSON = function(url) {
   return new Promise(function(resolve, reject) {
@@ -28,6 +29,8 @@ var getJSON = function(url) {
 }
 
 var pollISS = function() {
+  var issLayer = mapboxgl.polyline([]).addTo(map);
+
   var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
   var date = new Date();
   for (var i = 24; i > 0; i--) {
@@ -41,6 +44,7 @@ var pollISS = function() {
   getJSON(url)
     .then(function(data) {
       for (var i in data) {
+        polyline.addLatLng(mapboxgl.latLng(data[i].latitude,data[i].longitude));
         console.log(data[i].latitude,data[i].longitude,data[i].timestamp);
       }
     }),
