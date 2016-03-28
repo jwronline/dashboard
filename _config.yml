@@ -15,7 +15,7 @@ baseurl: /dashboard/
 color:
 # location of some files
 css:
-  - '/dashboard/src/css//style.css'
+  - '/dashboard/src/css/style.css'
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css'
 scripts:
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js'
