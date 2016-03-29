@@ -4,7 +4,7 @@ This is a dashboard to use with a space shuttle flight following [shuttle-comman
 
 Inspired by NASA's [MCC](https://en.wikipedia.org/wiki/Christopher_C._Kraft_Jr._Mission_Control_Center)
 
-# Usage
+## Usage
 
 Each click, spacebar, arrow down, arrow right, enter advances.
 
@@ -12,11 +12,11 @@ Each right click, arrow up, arrow left, backspace goes back a step.
 
 Right now stages and configurations aren't yet implemented
 
-# Contributing
+## Contributing
 
 Right now this is a shell of what it could become, it can use real data, more variable data and more configuring. It should also in long term be connected to what the players see and enter on their consoles.
 
-# License
+## License
 
 [![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
