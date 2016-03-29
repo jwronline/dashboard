@@ -78,7 +78,17 @@ var pollISS = function() {
     };
 }
 
+/**
+ * The main object holding:
+ * - the current step
+ * - the function to advance
+ * - the function to decline
+ * - the function to display
+ * - the data from _data/steps.yml
+ * @type {Object}
+ */
 var step = {
+  data: {{ site.data.steps | jsonify }},
   number: 0,
   decline: function() {
     this.number--;
@@ -94,7 +104,14 @@ var step = {
   }
 };
 
-
+/**
+ * Listen to keycodes to advance and go back a step
+ *
+ * advance: space, right arrow, down arrow and enter
+ * decline:         left arrow,   up arrow and backspace
+ *
+ * calls the step function
+ */
 window.addEventListener('keydown', function(e) {
   e.preventDefault();
   console.log(e.keyCode);
