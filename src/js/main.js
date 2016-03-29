@@ -107,7 +107,6 @@ var step = {
       counter.innerHTML = this.data[this.number].name;
     }
   }
-  }
 };
 
 /**
