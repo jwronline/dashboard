@@ -1,7 +1,6 @@
 ---
 #comment for jekyll
 ---
-
 /**
 mapboxgl.accessToken = 'pk.eyJ1IjoiandyIiwiYSI6ImNpbWFwcWk1cjAwMXR3ZG04d3RxdDljZDMifQ.z794EtjWIrwwHICvYXs5Ww';
 var map = new mapboxgl.Map({
@@ -106,12 +105,12 @@ var step = {
       // pollISS();
       counter.innerHTML = this.data[this.number].name;
       var texts = this.data[this.number].text;
-      console.log(texts);
       for (var i = 0; i < texts.length; i++) {
         var p = document.createElement('p');
         p.innerHTML = '$ ' + texts[i];
         data.appendChild(p);
       }
+      video.innerHTML = '<video src="'+this.data[this.number].video+'"><p>oops! no video 😢</p></video>';
     }
   }
 };
