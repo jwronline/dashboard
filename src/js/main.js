@@ -2,6 +2,7 @@
 #comment for jekyll
 ---
 
+/**
 mapboxgl.accessToken = 'pk.eyJ1IjoiandyIiwiYSI6ImNpbWFwcWk1cjAwMXR3ZG04d3RxdDljZDMifQ.z794EtjWIrwwHICvYXs5Ww';
 var map = new mapboxgl.Map({
   container: 'map',
