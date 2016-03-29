@@ -56,7 +56,6 @@ var pollISS = function() {
   getJSON(url)
     .then(function(data) {
       for (var i in data) {
-        // polyline.addLatLng(mapboxgl.latLng(data[i].latitude, data[i].longitude));
         geojson.data.geometry.coordinates.push([data[i].longitude, data[i].latitude]);
       }
       map.addSource("route", geojson);
@@ -79,8 +78,6 @@ var pollISS = function() {
     };
 }
 
-pollISS();
-
 var step = {
   number: 0,
   decline: function() {
@@ -92,6 +89,7 @@ var step = {
     this.display();
   },
   display: function() {
+    pollISS();
     counter.innerHTML = this.number;
   }
 };

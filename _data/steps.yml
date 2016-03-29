@@ -1,0 +1,26 @@
+-
+  name: APU Prestart
+  video: 01.mp4
+  text:
+    - APU Prestart 1
+    - APU Prestart 1
+    - APU Prestart 1
+
+-
+  name: Main Engine Ignition
+  video: 02.mp4
+  text:
+    - igniting main engine
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+
+-
+  name: SRB Ignition
+  video: 03.mp4
+  text:
+    - SRB Ignition
+    - Tower Clear
