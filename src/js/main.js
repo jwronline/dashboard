@@ -112,6 +112,7 @@ var step = {
         var p = document.createElement('p');
         p.innerHTML = '$ ' + text;
         data.appendChild(p);
+        p.scrollIntoView({behaviour: 'smooth'});
       }
       var intervalId = setInterval(function() {
         if (i == texts.length) {
