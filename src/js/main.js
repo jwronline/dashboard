@@ -107,16 +107,16 @@ var step = {
       counter.innerHTML = this.data[this.number].name;
       // texts
       var texts = this.data[this.number].text;
-
+      var i;
       var print = function(text) {
+        console.log(i);
         setTimeout(function() {
           var p = document.createElement('p');
           p.innerHTML = '$ ' + text;
           data.appendChild(p);
         }, i * 1000);
       }
-
-      for (var i = 0; i < texts.length; i++) {
+      for (i = 0; i < texts.length; i++) {
         print(texts[i]);
       }
       // video
