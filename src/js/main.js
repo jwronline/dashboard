@@ -99,8 +99,13 @@ var step = {
     this.display();
   },
   display: function() {
-    pollISS();
-    counter.innerHTML = this.number;
+    if (!this.data[this.number]) {
+      alert('this step doesn\'t exist!');
+    } else {
+      // pollISS();
+      counter.innerHTML = this.data[this.number].name;
+    }
+  }
   }
 };
 
