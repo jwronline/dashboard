@@ -105,6 +105,13 @@ var step = {
     } else {
       // pollISS();
       counter.innerHTML = this.data[this.number].name;
+      var texts = this.data[this.number].text;
+      console.log(texts);
+      for (var i = 0; i < texts.length; i++) {
+        var p = document.createElement('p');
+        p.innerHTML = '$ ' + texts[i];
+        data.appendChild(p);
+      }
     }
   }
 };

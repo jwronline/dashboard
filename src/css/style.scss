@@ -8,7 +8,7 @@
 }
 
 html {
-  font-family: sans-serif;
+  font-family: -apple-system, sans-serif;
   background-color: #000;
   color: #FFF;
 
@@ -54,7 +54,10 @@ header {
   &__data {
     display: initial;
     overflow: auto;
-    font-family: monospace;
+
+    #data {
+      font-family: Menlo, monospace;
+    }
 
     p {
       margin: 1em;
