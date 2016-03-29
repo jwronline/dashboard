@@ -1,7 +1,7 @@
 ---
 #comment for jekyll
 ---
-/**
+
 mapboxgl.accessToken = 'pk.eyJ1IjoiandyIiwiYSI6ImNpbWFwcWk1cjAwMXR3ZG04d3RxdDljZDMifQ.z794EtjWIrwwHICvYXs5Ww';
 var map = new mapboxgl.Map({
   container: 'map',
@@ -89,7 +89,7 @@ var pollISS = function() {
  */
 var step = {
   data: {{ site.data.steps | jsonify }},
-  number: 0,
+  number: -1,
   decline: function() {
     this.number--;
     this.display();
@@ -102,14 +102,24 @@ var step = {
     if (!this.data[this.number]) {
       alert('this step doesn\'t exist!');
     } else {
-      // pollISS();
+      pollISS();
+      // name
       counter.innerHTML = this.data[this.number].name;
+      // texts
       var texts = this.data[this.number].text;
-      for (var i = 0; i < texts.length; i++) {
-        var p = document.createElement('p');
-        p.innerHTML = '$ ' + texts[i];
-        data.appendChild(p);
+
+      var print = function(text) {
+        setTimeout(function() {
+          var p = document.createElement('p');
+          p.innerHTML = '$ ' + text;
+          data.appendChild(p);
+        }, i * 1000);
       }
+
+      for (var i = 0; i < texts.length; i++) {
+        print(texts[i]);
+      }
+      // video
       video.innerHTML = '<video src="'+this.data[this.number].video+'"><p>oops! no video 😢</p></video>';
     }
   }
