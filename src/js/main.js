@@ -122,7 +122,7 @@ var step = {
         print(texts[i++]);
       }, 1000);
       // video
-      video.innerHTML = '<video src="'+this.data[this.number].video+'"><p>oops! no video 😢</p></video>';
+      video.innerHTML = '<video src="src/vid/'+this.data[this.number].video+'" autoplay ><p>oops! no video 😢</p></video>';
     }
   }
 };
