@@ -1,26 +1,97 @@
 -
-  name: APU Prestart
+  name: Audio Test
   video: 01.mp4
   text:
-    - APU Prestart 1
-    - APU Prestart 2
-    - APU Prestart 3
+    - launch director
+    - flight director
+    - spacecraft systems officer
+    - ELSS
+    - weather & tracking
+    - public affairs officer
+    - commandant
+    - piloot
+    - mission specialist 1
+    - mission specialist 2
 
 -
-  name: Main Engine Ignition
+  name: Abort advisory test
   video: 02.mp4
   text:
-    - igniting main engine
-    - 6
-    - 5
-    - 4
-    - 3
-    - 2
-    - 1
+    - indrukken testschakelaar
+    - melding rode lampjes
+    - bevestiging positieve test
 
 -
-  name: SRB Ignition
-  video: 03.mp4
+  name: Weerbericht
+  video: 02.mp4
   text:
-    - SRB Ignition
-    - Tower Clear
+    - TAL / Dakar
+    - AOA / Edwards
+    - Cape Canaveral
+
+-
+  name: Cabin Leak Check
+  video: 02.mp4
+  text:
+    - go / no go
+    - sluiten luchtkleppen
+    - controle luchtdruk cabine
+    - afsluiting test
+
+-
+  name: APU opwarming (pre-start)
+  video: 02.mp4
+  text:
+    - go / no go
+    - start opwarming
+    - opwarming klaar
+
+-
+  name: Count resume
+  video: 02.mp4
+  text:
+    - hervatten aftelling
+    - raadplegen posten launch control
+
+-
+  name: Pre-launch programma
+  video: 02.mp4
+  text:
+    - laden pre-launch programma
+    - opstarten APU's
+    - opstarten brandstofcellen
+    - interne stroomvoorziening
+    - sluiten zuurstofkleppen
+    - intrekken afvoerarm
+    - uitschakelen APU's verhinderen
+    - sluiten waterstofkleppen
+    - ET onder operationele druk
+
+-
+  name: Eindaftelling en Lift-off
+  video: 02.mp4
+  text:
+    - start automatische aftelsequentie
+    - ontsteking hoofdmotoren (SSME's)
+    - SRB ontsteking & Lift-off
+    - verlaten lanceertoren
+    - start rolbeweging
+    - einde rolbeweging
+    - stuwkracht verminderen
+    - max Q
+    - motoren op volle kracht
+
+-
+  name: Eindaftelling en Lift-off
+  video: 02.mp4
+  text:
+    - SRB-sep (afwerpen vastbrandstofraketten)
+    - TAL-mogelijkheid
+    - negatief voor terugkeer
+    - ATO-mogelijkheid
+    - press to MECO
+    - stuwkracht verminderen
+    - MECO (main engine cut-off)
+    - ET separation
+    - laden OMS-programma
+    - OMS Burn
