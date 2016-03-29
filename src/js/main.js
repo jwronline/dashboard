@@ -145,5 +145,4 @@ window.addEventListener('keydown', function(e) {
     // left arrow, up arrow, backspace
     step.decline();
   }
-
 });
