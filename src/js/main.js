@@ -2,7 +2,6 @@
 #comment for jekyll
 ---
 
-/**
 mapboxgl.accessToken = 'pk.eyJ1IjoiandyIiwiYSI6ImNpbWFwcWk1cjAwMXR3ZG04d3RxdDljZDMifQ.z794EtjWIrwwHICvYXs5Ww';
 var map = new mapboxgl.Map({
   container: 'map',
@@ -13,7 +12,7 @@ var map = new mapboxgl.Map({
 map.addControl(new mapboxgl.Navigation({
   position: "top-left"
 }));
-**/
+
 var getJSON = function(url) {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -139,13 +138,15 @@ var step = {
  * - toggle running
  * @type {Object}
  */
-var _time = new Date(0, 0, 0, 0, 0);
+// start at -9m00 (a.k.a -1.dec.31.23.51.00)
+// var _time = new Date(-000001, 11, 31, 23, 59, 55);
+var _time = new Date(0 - 9 * 60 * 1000);
 var timer = {
   time: _time,
   running: false,
   timeInterval: null,
   display: function() {
-    days.innerHTML = (this.time.getDay() < 10 ? '0' : '' ) + this.time.getDay();
+    days.innerHTML = (this.time.getDate() < 10 ? '0' : '' ) + this.time.getDate();
     hours.innerHTML = (this.time.getHours() < 10 ? '0' : '' ) + this.time.getHours();
     minutes.innerHTML = (this.time.getMinutes() < 10 ? '0' : '' ) + this.time.getMinutes();
     seconds.innerHTML = (this.time.getSeconds() < 10 ? '0' : '' ) + this.time.getSeconds();
