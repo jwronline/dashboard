@@ -2,9 +2,10 @@
 layout: default
 ---
 
-<header>
-  <h1>Mission Control Center</h1>
-  <span id="counter">0</span>
+<header class="header">
+  <p class="header--item monospace" id="time"><span id="sign">-</span><span id="days">00</span>/<span id="hours">09</span>:<span id="minutes">00</span>:<span id="seconds">00</span> MET</p>
+  <h1 class="header--item">Mission Control Center</h1>
+  <p id="counter" class="header--item">Setup</p>
 </header>
 
 <section class="container container__large">
@@ -16,7 +17,7 @@ layout: default
 
   <section class="container container__data" >
     <h2 class="structural">fancy data</h2>
-    <div id="data">
+    <div id="data" class="monospace">
       <p>$ User JWR logged in</p>
     </div>
   </section>

@@ -9,7 +9,7 @@
 
 html {
   font-family: -apple-system, sans-serif;
-  background-color: #000;
+  background-color: #111;
   color: #FFF;
 
 }
@@ -20,18 +20,16 @@ body {
   min-height: 100vh;
 }
 
-header {
-  height: 3em;
+.header {
+  // height: 3em;
+  padding: 1em;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
-#counter {
-  position: absolute;
-  top: .5em;
-  right: .5em;
+.monospace {
+  font-family: Menlo, monospace;
 }
 
 .container {
@@ -54,10 +52,6 @@ header {
   &__data {
     display: initial;
     overflow: auto;
-
-    #data {
-      font-family: Menlo, monospace;
-    }
 
     p {
       margin: 1em;

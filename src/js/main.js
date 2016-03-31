@@ -7,7 +7,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/jwr/cimaq5nsu009lbkm0gpqx3e2o',
   center: [0, 10],
-  zoom: 1
+  zoom: 0.5
 });
 map.addControl(new mapboxgl.Navigation({
   position: "top-left"
@@ -88,7 +88,7 @@ var pollISS = function() {
  * @type {Object}
  */
 var step = {
-  data: {{ site.data.steps | jsonify }},
+  data: {{site.data.steps | jsonify}},
   number: -1,
   decline: function() {
     this.number--;
@@ -112,7 +112,9 @@ var step = {
         var p = document.createElement('p');
         p.innerHTML = '$ ' + text;
         data.appendChild(p);
-        p.scrollIntoView({behaviour: 'smooth'});
+        p.scrollIntoView({
+          behaviour: 'smooth'
+        });
       }
       var intervalId = setInterval(function() {
         if (i == texts.length) {
@@ -122,7 +124,60 @@ var step = {
         print(texts[i++]);
       }, 1000);
       // video
-      video.innerHTML = '<video src="src/vid/'+this.data[this.number].video+'" autoplay ><p>oops! no video 😢</p></video>';
+      video.innerHTML = '<video src="src/vid/' + this.data[this.number].video + '" autoplay ><p>oops! no video 😢</p></video>';
+    }
+  }
+};
+
+/**
+ * The timer holding
+ * - the current MET
+ * - add one second
+ * - start running
+ * - stop running
+ * - toggle running
+ * @type {Object}
+ */
+// start at -9m00 (a.k.a 9 minutes before epoch)
+var _time = new Date(0 - 9 * 60 * 1000);
+var timer = {
+  time: _time,
+  running: false,
+  timeInterval: null,
+  display: function() {
+    if (this.time.getTime() < 0) {
+      sign.innerHTML = '-';
+    } else {
+      sign.innerHTML = '';
+    }
+    var d = Math.floor(Math.abs((this.time.getTime() / 86400000)));
+    var h = Math.floor(Math.abs((this.time.getTime() / 3600000) % 24));
+    var m = Math.floor(Math.abs((this.time.getTime() / 60000) % 60));
+    var s = Math.floor(Math.abs((this.time.getTime() / 1000) % 60));
+    days.innerHTML =    (h < 10 ? '0' : '' ) + d;
+    hours.innerHTML =   (h < 10 ? '0' : '' ) + h;
+    minutes.innerHTML = (m < 10 ? '0' : '' ) + m;
+    seconds.innerHTML = (s < 10 ? '0' : '' ) + s;
+  },
+  tick: function() {
+    this.time.setSeconds(this.time.getSeconds() + 1);
+    this.display();
+  },
+  play: function() {
+    this.timeInterval = setInterval(function() {
+      this.tick();
+    }.bind(this), 1000);
+    this.running = true;
+  },
+  pause: function() {
+    clearInterval(this.timeInterval);
+    this.running = false;
+  },
+  toggle: function() {
+    if (this.running) {
+      this.pause();
+    } else {
+      this.play();
     }
   }
 };
@@ -136,13 +191,19 @@ var step = {
  * calls the step function
  */
 window.addEventListener('keydown', function(e) {
-  e.preventDefault();
   console.log(e.keyCode);
   if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 40 || e.keyCode === 13) {
+    e.preventDefault();
     // space, right arrow, down arrow, enter
     step.advance();
   } else if (e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 8) {
+    e.preventDefault();
     // left arrow, up arrow, backspace
     step.decline();
+    // p
+  } else if (e.keyCode === 80) {
+    e.preventDefault();
+    // toggle the running of the time
+    timer.toggle();
   }
 });
