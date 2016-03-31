@@ -138,8 +138,7 @@ var step = {
  * - toggle running
  * @type {Object}
  */
-// start at -9m00 (a.k.a -1.dec.31.23.51.00)
-// var _time = new Date(-000001, 11, 31, 23, 59, 55);
+// start at -9m00 (a.k.a 9 minutes before epoch)
 var _time = new Date(0 - 9 * 60 * 1000);
 var timer = {
   time: _time,
@@ -151,10 +150,14 @@ var timer = {
     } else {
       sign.innerHTML = '';
     }
-    days.innerHTML = (this.time.getDate() < 10 ? '0' : '' ) + this.time.getDate();
-    hours.innerHTML = (this.time.getHours() < 10 ? '0' : '' ) + this.time.getHours();
-    minutes.innerHTML = (this.time.getMinutes() < 10 ? '0' : '' ) + this.time.getMinutes();
-    seconds.innerHTML = (this.time.getSeconds() < 10 ? '0' : '' ) + this.time.getSeconds();
+    var d = Math.floor(Math.abs((this.time.getTime() / 86400000)));
+    var h = Math.floor(Math.abs((this.time.getTime() / 3600000) % 24));
+    var m = Math.floor(Math.abs((this.time.getTime() / 60000) % 60));
+    var s = Math.floor(Math.abs((this.time.getTime() / 1000) % 60));
+    days.innerHTML =    (h < 10 ? '0' : '' ) + d;
+    hours.innerHTML =   (h < 10 ? '0' : '' ) + h;
+    minutes.innerHTML = (m < 10 ? '0' : '' ) + m;
+    seconds.innerHTML = (s < 10 ? '0' : '' ) + s;
   },
   tick: function() {
     this.time.setSeconds(this.time.getSeconds() + 1);
