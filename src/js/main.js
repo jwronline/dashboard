@@ -158,6 +158,7 @@ var timer = {
     hours.innerHTML =   (h < 10 ? '0' : '' ) + h;
     minutes.innerHTML = (m < 10 ? '0' : '' ) + m;
     seconds.innerHTML = (s < 10 ? '0' : '' ) + s;
+    holding.innerHTML = this.running ? '' : '(H)';
   },
   tick: function() {
     this.time.setSeconds(this.time.getSeconds() + 1);
@@ -168,10 +169,12 @@ var timer = {
       this.tick();
     }.bind(this), 1000);
     this.running = true;
+    this.display();
   },
   pause: function() {
     clearInterval(this.timeInterval);
     this.running = false;
+    this.display();
   },
   toggle: function() {
     if (this.running) {
