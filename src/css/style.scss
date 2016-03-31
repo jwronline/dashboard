@@ -21,11 +21,11 @@ body {
 }
 
 .header {
-  // height: 3em;
   padding: 1em;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
 }
 
 .monospace {
