@@ -2,6 +2,7 @@
 #comment for jekyll
 ---
 
+/**
 mapboxgl.accessToken = 'pk.eyJ1IjoiandyIiwiYSI6ImNpbWFwcWk1cjAwMXR3ZG04d3RxdDljZDMifQ.z794EtjWIrwwHICvYXs5Ww';
 var map = new mapboxgl.Map({
   container: 'map',
@@ -12,7 +13,7 @@ var map = new mapboxgl.Map({
 map.addControl(new mapboxgl.Navigation({
   position: "top-left"
 }));
-
+**/
 var getJSON = function(url) {
   return new Promise(function(resolve, reject) {
     var xhr = new XMLHttpRequest();
@@ -88,7 +89,7 @@ var pollISS = function() {
  * @type {Object}
  */
 var step = {
-  data: {{ site.data.steps | jsonify }},
+  data: {{site.data.steps | jsonify}},
   number: -1,
   decline: function() {
     this.number--;
@@ -112,7 +113,9 @@ var step = {
         var p = document.createElement('p');
         p.innerHTML = '$ ' + text;
         data.appendChild(p);
-        p.scrollIntoView({behaviour: 'smooth'});
+        p.scrollIntoView({
+          behaviour: 'smooth'
+        });
       }
       var intervalId = setInterval(function() {
         if (i == texts.length) {
@@ -122,7 +125,50 @@ var step = {
         print(texts[i++]);
       }, 1000);
       // video
-      video.innerHTML = '<video src="src/vid/'+this.data[this.number].video+'" autoplay ><p>oops! no video 😢</p></video>';
+      video.innerHTML = '<video src="src/vid/' + this.data[this.number].video + '" autoplay ><p>oops! no video 😢</p></video>';
+    }
+  }
+};
+
+/**
+ * The timer holding
+ * - the current MET
+ * - add one second
+ * - start running
+ * - stop running
+ * - toggle running
+ * @type {Object}
+ */
+var _time = new Date(0, 0, 0, 0, 0);
+var timer = {
+  time: _time,
+  running: false,
+  timeInterval: null,
+  display: function() {
+    days.innerHTML = this.time.getDays();
+    hours.innerHTML = this.time.getHours();
+    minutes.innerHTML = this.time.getMinutes();
+    seconds.innerHTML = this.time.getSeconds();
+  },
+  tick: function() {
+    this.time.setSeconds(++this.time.getSeconds());
+    this.display();
+  },
+  play: function() {
+    this.timeInterval = setInterval(function() {
+      this.tick();
+    }, 1000);
+    this.running = true;
+  },
+  pause: function() {
+    clearInterval(this.timeInterval);
+    this.running = false;
+  },
+  toggle: function() {
+    if (this.running) {
+      this.pause();
+    } else {
+      this.play();
     }
   }
 };
@@ -144,5 +190,7 @@ window.addEventListener('keydown', function(e) {
   } else if (e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 8) {
     // left arrow, up arrow, backspace
     step.decline();
+  } else if (e.keyCode === 80) {
+    time.toggle();
   }
 });

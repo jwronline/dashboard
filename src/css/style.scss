@@ -21,15 +21,15 @@ body {
 }
 
 .header {
-  height: 3em;
+  // height: 3em;
   padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#time {
-  font-family: Courier, monospace;
+.monospace {
+  font-family: Menlo, monospace;
 }
 
 .container {
@@ -52,10 +52,6 @@ body {
   &__data {
     display: initial;
     overflow: auto;
-
-    #data {
-      font-family: Menlo, monospace;
-    }
 
     p {
       margin: 1em;
