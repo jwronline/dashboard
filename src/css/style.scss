@@ -20,18 +20,16 @@ body {
   min-height: 100vh;
 }
 
-header {
+.header {
   height: 3em;
+  padding: 1em;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
-#counter {
-  position: absolute;
-  top: .5em;
-  right: .5em;
+#time {
+  font-family: Courier, monospace;
 }
 
 .container {
