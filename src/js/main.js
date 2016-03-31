@@ -145,19 +145,19 @@ var timer = {
   running: false,
   timeInterval: null,
   display: function() {
-    days.innerHTML = this.time.getDays();
-    hours.innerHTML = this.time.getHours();
-    minutes.innerHTML = this.time.getMinutes();
-    seconds.innerHTML = this.time.getSeconds();
+    days.innerHTML = (this.time.getDay() < 10 ? '0' : '' ) + this.time.getDay();
+    hours.innerHTML = (this.time.getHours() < 10 ? '0' : '' ) + this.time.getHours();
+    minutes.innerHTML = (this.time.getMinutes() < 10 ? '0' : '' ) + this.time.getMinutes();
+    seconds.innerHTML = (this.time.getSeconds() < 10 ? '0' : '' ) + this.time.getSeconds();
   },
   tick: function() {
-    this.time.setSeconds(++this.time.getSeconds());
+    this.time.setSeconds(this.time.getSeconds() + 1);
     this.display();
   },
   play: function() {
     this.timeInterval = setInterval(function() {
       this.tick();
-    }, 1000);
+    }.bind(this), 1000);
     this.running = true;
   },
   pause: function() {
@@ -182,15 +182,19 @@ var timer = {
  * calls the step function
  */
 window.addEventListener('keydown', function(e) {
-  e.preventDefault();
   console.log(e.keyCode);
   if (e.keyCode === 32 || e.keyCode === 39 || e.keyCode === 40 || e.keyCode === 13) {
+    e.preventDefault();
     // space, right arrow, down arrow, enter
     step.advance();
   } else if (e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 8) {
+    e.preventDefault();
     // left arrow, up arrow, backspace
     step.decline();
+    // p
   } else if (e.keyCode === 80) {
-    time.toggle();
+    e.preventDefault();
+    // toggle the running of the time
+    timer.toggle();
   }
 });
