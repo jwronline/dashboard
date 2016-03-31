@@ -7,7 +7,7 @@ var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/jwr/cimaq5nsu009lbkm0gpqx3e2o',
   center: [0, 10],
-  zoom: 1
+  zoom: 0.5
 });
 map.addControl(new mapboxgl.Navigation({
   position: "top-left"
@@ -146,6 +146,11 @@ var timer = {
   running: false,
   timeInterval: null,
   display: function() {
+    if (this.time.getTime() < 0) {
+      sign.innerHTML = '-';
+    } else {
+      sign.innerHTML = '';
+    }
     days.innerHTML = (this.time.getDate() < 10 ? '0' : '' ) + this.time.getDate();
     hours.innerHTML = (this.time.getHours() < 10 ? '0' : '' ) + this.time.getHours();
     minutes.innerHTML = (this.time.getMinutes() < 10 ? '0' : '' ) + this.time.getMinutes();
