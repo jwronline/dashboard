@@ -1,8 +1,19 @@
 ---
 #comment for jekyll
 ---
-var offline = true;
-if (offline) {
+// places to put data in
+var map = document.getElementById('map');
+var data = document.getElementById('data');
+var counter = document.getElementById('counter');
+var days = document.getElementById('days');
+var hours = document.getElementById('hours');
+var minutes = document.getElementById('minutes');
+var seconds = document.getElementById('seconds');
+var video = document.getElementById('video');
+var sign = document.getElementById('sign');
+var holding = document.getElementById('holding');
+
+if (!navigator.onLine) {
   map.innerHTML = '<img src="src/img/map.png" alt="map of the world">';
   var pollISS = function () {
     console.warn('you\'re currently offline.');
