@@ -6,11 +6,26 @@ Inspired by NASA's [MCC](https://en.wikipedia.org/wiki/Christopher_C._Kraft_Jr._
 
 ## Usage
 
-Each click, spacebar, arrow down, arrow right, enter advances.
+Go to the "releases" tab and download the newest version of `dashboard.zip`. You can unzip that file and open `index.html` in your favourite browser.
 
-Each right click, arrow up, arrow left, backspace goes back a step.
+Make sure you have an internet connection to load the map.
 
-Right now stages and configurations aren't yet implemented
+You can also use the online version at [gh.jwronline.be/dashboard/](http://gh.jwronline.be/dashboard/).
+
+### controls
+
+* advance a step
+    * spacebar
+    * enter
+    * down arrow
+    * righ arrow
+* go backa step
+    * backspace
+    * up arrow
+    * left arrow
+* toggle holding state (MET)
+    * p
+    * h
 
 ## Contributing
 
