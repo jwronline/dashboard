@@ -8,7 +8,7 @@ Inspired by NASA's [MCC](https://en.wikipedia.org/wiki/Christopher_C._Kraft_Jr._
 
 Go to the "releases" tab and download the newest version of `dashboard.zip`. You can unzip that file and open `index.html` in your favourite browser.
 
-Make sure you have an internet connection to load the map.
+Make sure you have an internet connection to load the map (otherwise a static image is showed).
 
 You can also use the online version at [gh.jwronline.be/dashboard/](http://gh.jwronline.be/dashboard/).
 
