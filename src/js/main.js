@@ -203,8 +203,8 @@ window.addEventListener('keydown', function(e) {
     e.preventDefault();
     // left arrow, up arrow, backspace
     step.decline();
-    // p
-  } else if (e.keyCode === 80) {
+    // p, h
+  } else if (e.keyCode === 80 || e.keyCode === 72) {
     e.preventDefault();
     // toggle the running of the time
     timer.toggle();
