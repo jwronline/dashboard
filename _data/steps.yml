@@ -1,5 +1,6 @@
 -
   name: Audio Test
+  video: pre-launch-1.mp4
   text:
     - Begin audio test
     - launch director
@@ -15,6 +16,7 @@
 
 -
   name: Abort advisory test
+  video: pre-launch-2.mp4
   style: red
   text:
     - ABORT
@@ -26,6 +28,7 @@
 
 -
   name: Weerbericht
+  video: weather.mp4
   text:
     - TAL / Dakar
     - AOA / Edwards
@@ -33,6 +36,7 @@
 
 -
   name: Cabin Leak Check
+  video: pre-launch-3.mp4
   text:
     - sluiten luchtkleppen
     - controle luchtdruk cabine
@@ -40,6 +44,7 @@
 
 -
   name: APU opwarming (pre-start)
+  video: pre-launch-4.mp4
   text:
     - start opwarming
     - ...
@@ -50,12 +55,14 @@
 
 -
   name: Count resume
+  video: count-resume.mp4
   text:
     - hervatten aftelling
     - raadplegen posten launch control
 
 -
   name: Pre-launch programma
+  video: pre-launch-5.mp4
   text:
     - laden pre-launch programma
     - opstarten APU's
