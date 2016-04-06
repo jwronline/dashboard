@@ -63,7 +63,7 @@ This will setup a local server that will mirror all keypresses etc. to the other
     * enter
     * down arrow
     * righ arrow
-* go backa step
+* go back a step
     * backspace
     * up arrow
     * left arrow
