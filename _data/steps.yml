@@ -186,6 +186,7 @@
     - "SSME 3: 65.1%"
 
 - name: MECO
+  video: meco.mp4
   text:
     - MECO (main engine cut-off)
     - ET separation
