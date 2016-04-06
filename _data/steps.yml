@@ -180,6 +180,7 @@
     - press to MECO
 -
   name: Stuwkracht verminderen
+  video: throttle-down.mp4
   text:
     - "SSME 1: 64.9%"
     - "SSME 2: 65.0%"
