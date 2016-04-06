@@ -128,11 +128,12 @@ var step = {
       var print = function(text) {
         var p = document.createElement('p');
         p.innerHTML = '$ ' + text;
+        if (this.data[this.number].style) p.classList.add(this.data[this.number].style);
         data.appendChild(p);
         p.scrollIntoView({
           behaviour: 'smooth'
         });
-      }
+      }.bind(this);
       var intervalId = setInterval(function() {
         if (i == texts.length) {
           clearInterval(intervalId);
