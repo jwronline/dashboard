@@ -73,6 +73,8 @@ This will setup a local server that will mirror all keypresses etc. to the other
 * toggle holding state (MET)
     * p
     * h
+* toggle help
+  * ?
 
 ## Contributing
 

@@ -12,7 +12,7 @@ var seconds = document.getElementById('seconds');
 var video = document.getElementById('video');
 var sign = document.getElementById('sign');
 var holding = document.getElementById('holding');
-
+var help = document.getElementById('help');
 
 /**
  * get and parse a json file from url
@@ -287,5 +287,8 @@ window.addEventListener('keydown', function(e) {
     e.preventDefault();
     // toggle the running of the time
     timer.toggle();
+    // ? show help
+  } else if (e.keyCode === 191 || e.keyCode === 188) {
+    help.classList.toggle('help__hidden');
   }
 });
