@@ -15,7 +15,7 @@ There are several ways to running this dashboard
 
 #### Static (1 display)
 
-Go to the "releases" tab and download the newest version of `dashboard.zip`. You can unzip that file and open `index.html` in your favourite browser.
+Go to the ["releases"](https://github.com/jwronline/dashboard/releases/) tab and download the newest version of `dashboard.zip`. You can unzip that file and open `index.html` in your favourite browser.
 
 - no real ISS data
 - updated ISS data if an internet connection present
