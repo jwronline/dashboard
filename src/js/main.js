@@ -76,8 +76,8 @@ if (!navigator.onLine) {
 
     var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
     var date = new Date();
-    for (var i = 400; i > 0; i -= 10) {
-      if (i !== 400) {
+    for (var i = 135; i > 0; i -= 3) {
+      if (i !== 135) {
         url += ',';
       }
       var temp = new Date();
