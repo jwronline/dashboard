@@ -3,7 +3,7 @@ rvm:
   - 2.0.0
 branches:
   only:
-  - master
+  - gh-pages
 install:
   - bundle install
 script:
