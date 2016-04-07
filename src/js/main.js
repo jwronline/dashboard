@@ -82,6 +82,10 @@ if (!navigator.onLine) {
     }
     getJSON(url)
       .then(function(data) {
+        // todo: use proper updateSoure()
+        // map.removeSource('route');
+        // map.removeSource('final');
+
         var coords = [];
 
         var current = {
