@@ -28,6 +28,11 @@ body {
   align-items: baseline;
 }
 
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .monospace {
   font-family: Menlo, monospace;
 }
