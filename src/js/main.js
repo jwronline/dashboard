@@ -105,19 +105,26 @@ if (!navigator.onLine) {
         });
         map.addSource("final", {
           "type": "geojson",
-          "data": "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [data[data.length - 1].longitude, data[data.length - 1].latitude]
-          },
-          "properties": {
-            "title": "Current location"
+          "data": {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [data[data.length - 1].longitude, data[data.length - 1].latitude]
+            },
+            "properties": {
+              "title": "Current location"
+            }
           }
         });
         map.addLayer({
           "id": "final",
           "type": "symbol",
-          "source": "final"
+          "source": "final",
+          "layout": {
+            // "icon-image": "rocket-15"
+            // "icon-image": "triangle-15"
+            "icon-image": "star-15"
+          }
         });
 
       }),
@@ -150,6 +157,7 @@ var step = {
     if (!this.data[this.number]) {
       alert('this step doesn\'t exist!');
     } else {
+      // getting the position of the iss
       pollISS();
       // name
       counter.innerHTML = this.data[this.number].name;
