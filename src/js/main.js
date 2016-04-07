@@ -109,7 +109,6 @@ if (!navigator.onLine) {
               coords = [];
             }
           }
-          console.log(coords);
           coords.push([data[i].longitude, data[i].latitude]);
         }
         geojson.data.features.push({
@@ -120,9 +119,6 @@ if (!navigator.onLine) {
             "coordinates": coords
           }
         }, current);
-
-
-        console.log(geojson);
 
         map.addSource("route", geojson);
         map.addLayer({
