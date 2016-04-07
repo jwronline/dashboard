@@ -1,4 +1,5 @@
 ## Pre-Launch
+
 -
   name: Audio Test
   video: pre-launch-1.mp4
@@ -53,7 +54,9 @@
     - ...
     - ...
     - opwarming klaar
+
 ## Launch
+
 -
   name: Count resume
   video: count-resume.mp4
@@ -209,8 +212,95 @@
 -
   name: OMS Burn
   text:
-    - de motoren worden terug aangeschakeld
+    - OMS Burn in 10
+    - 9
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+    - OMS ingeschakeld
+    - "SSME 1: 50.0%"
+    - "SSME 2: 50.0%"
+    - "SSME 3: 50.0%"
+
 ## On-Orbit
+-
+  name: OMS uitschakelen
+  text:
+    - OMS burn voltooid
+    - "SSME 1: 0.0%"
+    - "SSME 2: 0.0%"
+    - "SSME 3: 0.0%"
+
+-
+  name: Ontplooien vrachtdeuren
+  text:
+    - begin ontplooien vrachtdeuren
+    - ...
+    - ...
+    - ...
+    - vrachtdeuren ontplooid
+    - radiatoren ontplooid
+
+-
+  name: EVA-voorbereiding
+  text:
+    - GO voor EVA
+    - begin veiligheidsmaneuver
+
+-
+  name: EVA
+  text:
+    - Astronauten in de luchtsluis
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - EVA begonnnen
+    - astronauten nu in de ruimte
+    - veel succes!
+
+-
+  name: Voorbereiding satelliet
+  text:
+    - uitvoeren checklists
+    - spin-stablilisatie
+    - lancering over 10
+    - 9
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+    - satelliet gelanceerd
+    - begin verwijderingsmaneuver
+    - ...
+    - ...
+    - ...
+    - ...
+    - verwijderingsmaneuver voltooid
+    - boordsystemen satelliet actief
+
+-
+  name: OMS-2
+  text:
+    - GO voor ontsteking OMS-2
+
 #--> fill in please
 #--> find videos
 ## De-orbit and landing
