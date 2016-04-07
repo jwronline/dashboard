@@ -1,6 +1,6 @@
 ---
-#comment for jekyll
 ---
+
 // places to put data in
 var map = document.getElementById('map');
 var data = document.getElementById('data');
@@ -13,12 +13,38 @@ var video = document.getElementById('video');
 var sign = document.getElementById('sign');
 var holding = document.getElementById('holding');
 
+
+/**
+ * get and parse a json file from url
+ * @param  {string} url the url to get
+ * @return {Promise}    the Promise that will return the json or status
+ */
+var getJSON = function(url) {
+  return new Promise(function(resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', url, true);
+    xhr.responseType = 'json';
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status == 200) {
+        resolve(xhr.response);
+      } else {
+        reject(status);
+      }
+    };
+    xhr.send();
+  });
+}
+
 if (!navigator.onLine) {
   map.innerHTML = '<img src="src/img/map.png" alt="map of the world">';
-  var pollISS = function () {
+  var pollISS = function() {
     console.warn('you\'re currently offline.');
   };
 } else {
+  /**
+   * Mapbox gl initialising
+   */
   mapboxgl.accessToken = 'pk.eyJ1IjoiandyIiwiYSI6ImNpbWFwcWk1cjAwMXR3ZG04d3RxdDljZDMifQ.z794EtjWIrwwHICvYXs5Ww';
   var map = new mapboxgl.Map({
     container: 'map',
@@ -30,23 +56,11 @@ if (!navigator.onLine) {
     position: "top-left"
   }));
 
-  var getJSON = function(url) {
-    return new Promise(function(resolve, reject) {
-      var xhr = new XMLHttpRequest();
-      xhr.open('get', url, true);
-      xhr.responseType = 'json';
-      xhr.onload = function() {
-        var status = xhr.status;
-        if (status == 200) {
-          resolve(xhr.response);
-        } else {
-          reject(status);
-        }
-      };
-      xhr.send();
-    });
-  }
-
+  /**
+   * Poll the iss data and put it on the map
+   * needs:
+   * - a mapbox gl map in '#map' and variable name 'map'
+   */
   var pollISS = function() {
     var geojson = {
       "type": "geojson",
@@ -89,6 +103,23 @@ if (!navigator.onLine) {
             "line-width": 2
           }
         });
+        map.addSource("final", {
+          "type": "geojson",
+          "data": "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [data[data.length - 1].longitude, data[data.length - 1].latitude]
+          },
+          "properties": {
+            "title": "Current location"
+          }
+        });
+        map.addLayer({
+          "id": "final",
+          "type": "symbol",
+          "source": "final"
+        });
+
       }),
       function(status) {
         console.warn(status);
@@ -172,10 +203,10 @@ var timer = {
     var h = Math.floor(Math.abs((this.time.getTime() / 3600000) % 24));
     var m = Math.floor(Math.abs((this.time.getTime() / 60000) % 60));
     var s = Math.floor(Math.abs((this.time.getTime() / 1000) % 60));
-    days.innerHTML =    (h < 10 ? '0' : '' ) + d;
-    hours.innerHTML =   (h < 10 ? '0' : '' ) + h;
-    minutes.innerHTML = (m < 10 ? '0' : '' ) + m;
-    seconds.innerHTML = (s < 10 ? '0' : '' ) + s;
+    days.innerHTML = (h < 10 ? '0' : '') + d;
+    hours.innerHTML = (h < 10 ? '0' : '') + h;
+    minutes.innerHTML = (m < 10 ? '0' : '') + m;
+    seconds.innerHTML = (s < 10 ? '0' : '') + s;
     holding.innerHTML = this.running ? '' : '(H)';
   },
   tick: function() {
