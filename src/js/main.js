@@ -65,19 +65,15 @@ if (!navigator.onLine) {
     var geojson = {
       "type": "geojson",
       "data": {
-        "type": "Feature",
-        "properties": {},
-        "geometry": {
-          "type": "LineString",
-          "coordinates": []
-        }
+        "type": "FeatureCollection",
+        "features": []
       }
     }
 
     var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
     var date = new Date();
-    for (var i = 135; i > 0; i -= 3) {
-      if (i !== 135) {
+    for (var i = 200; i > 0; i -= 5) {
+      if (i !== 200) {
         url += ',';
       }
       var temp = new Date();
@@ -86,9 +82,48 @@ if (!navigator.onLine) {
     }
     getJSON(url)
       .then(function(data) {
-        for (var i in data) {
-          geojson.data.geometry.coordinates.push([data[i].longitude, data[i].latitude]);
+        var coords = [];
+
+        var current = {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [data[data.length - 1].longitude, data[data.length - 1].latitude]
+          },
+          "properties": {
+            "title": "Current location"
+          }
         }
+
+        for (var i in data) {
+          if (i != 0) {
+            if (data[i].longitude - data[i - 1].longitude > 200 || data[i].longitude - data[i - 1].longitude < -200) {
+              geojson.data.features.push({
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": coords
+                }
+              });
+              coords = [];
+            }
+          }
+          console.log(coords);
+          coords.push([data[i].longitude, data[i].latitude]);
+        }
+        geojson.data.features.push({
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "LineString",
+            "coordinates": coords
+          }
+        }, current);
+
+
+        console.log(geojson);
+
         map.addSource("route", geojson);
         map.addLayer({
           "id": "route",
@@ -105,16 +140,7 @@ if (!navigator.onLine) {
         });
         map.addSource("final", {
           "type": "geojson",
-          "data": {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [data[data.length - 1].longitude, data[data.length - 1].latitude]
-            },
-            "properties": {
-              "title": "Current location"
-            }
-          }
+          "data": current
         });
         map.addLayer({
           "id": "final",
