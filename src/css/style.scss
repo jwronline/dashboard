@@ -1,6 +1,7 @@
 ---
 # comment for jekyll
 ---
+
 *, *:before, *:after {
   padding: 0;
   margin: 0;
@@ -15,17 +16,35 @@ html {
 }
 
 body {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
 }
 
 .header {
   padding: 1em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 h1 a {
@@ -79,17 +98,34 @@ kbd {
 .container {
   min-height: 10em;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex: 2 1 10em;
-  flex-direction: row;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2 1 10em;
+      -ms-flex: 2 1 10em;
+          flex: 2 1 10em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
 
   &__streams {
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
 
   &__large {
     @media (max-width: 40em) {
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
     }
   }
 
@@ -109,7 +145,8 @@ kbd {
 }
 
 #map,video,img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -128,10 +165,23 @@ kbd {
   width: 100%;
   height: 100%;
   &--intro {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
   }
 }
