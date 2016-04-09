@@ -16,5 +16,6 @@ deploy:
     secure: CeUmxdeGiK0CEyXG+d1tOdYsmI+5G0RQFTwoXDK8+8vyQxE5XHKVphVWO6mj/vcMXQaaBGWr8mpiJgmwbPYma9ESG/806DBolf0D2GidU4VKU+MZQI0Ug0MkUbWQVD1Y78g0JE7J/beGKJFYpogP2FuxQNxBzZ1gcJsSltM/sRKuRJoX76yIlEMq0WsRgRkBGztKz48pYNxTZaSqTCAHB2xGrY5ACpzoDTZ5m+cL+h8hfY9frjHsF1zYuUij6ClkQp9kyZudp+B9vpM3+2AYNWQvMHI9qnsy143H+9p9+BxSwCkwx5PR1ga6QymGjbXzIANQoEaepqi9HDngBumNQdJTSsb7oEXXBv9AGqo6MTB/qqXPX7x9jO/lrzvEue9HNsJxvVR9DdO6NuzBxnJ5abuNjhkPld31Rj6/IQRdm4Hy1uStmFpR/5Qs712qTZQbQZGFa+NrnodOrciDmyjpL1zu0Hzyb4d3crecy3RIzNXdB8i8hayhSjix2flDSPcGZf4lu938nq4QC5nSHQRIYBBsYLKFtblErCPgN/5PjUYSMRp2L4p+8mi92IE4fY5aGQM89w+Tz3iuCZjutLiDlrL1qHqq2stq0dLS5aWSI09gscKL2evHanSmDUAiaRLcqJDX/hXqRxQboH78l7+M3Id1Ck2k+JpF8a9n4CSXmeI=
   file: dashboard.zip
   on:
+    tag: true
     repo: jwronline/dashboard
     branch: gh-pages
