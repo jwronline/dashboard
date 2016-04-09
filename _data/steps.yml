@@ -42,7 +42,7 @@
   text:
     - sluiten luchtkleppen
     - controle luchtdruk cabine
-    - afsluiting test
+    - afsluitingstest
 
 -
   name: APU opwarming (pre-start)
