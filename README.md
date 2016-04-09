@@ -3,6 +3,8 @@
 
 # Dashboard
 
+[![Build Status](https://travis-ci.org/jwronline/dashboard.svg?branch=master)](https://travis-ci.org/jwronline/dashboard)
+
 This is a dashboard to use with a space shuttle flight following [shuttle-command](http://gh.jwronline.be/shuttle-command/) and [jwr-shuttle](https://github.com/jwronline/jwr-shuttle) for scripts.
 
 Inspired by NASA's [MCC](https://en.wikipedia.org/wiki/Christopher_C._Kraft_Jr._Mission_Control_Center)
