@@ -1,19 +1,13 @@
-# the language
 lang: nl
-# author info
 author:
   name: Haroen Viaene
   email: hell@haroen.me
   twitter: '@haroenv'
-# title and description
 title: dashboard
 description: 'A dashboard for a shuttle mission. See also: https://github.com/jwronline/shuttle-command'
-# the url this will be published at
 url: http://gh.jwronline.be
 baseurl: /dashboard/
-# the theme colour
 color:
-# location of some files
 css:
   - 'src/css/style.css'
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css'
@@ -22,6 +16,8 @@ scripts:
   - 'https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'
   - 'src/js/main.js'
 favicon: 'src/img/favicon.png'
-#configuration
 sass:
   style: compressed
+exclude:
+  - Gemfile
+  - Gemfile.lock
