@@ -207,7 +207,11 @@ var step = {
         print(texts[i++]);
       }, 1000);
       // video
-      video.innerHTML = '<video src="src/vid/' + this.data[this.number].video + '" autoplay ><p>oops! no video 😢</p></video>';
+      if (typeof this.data[this.number].video !== 'undefined') {
+        video.innerHTML = '<video src="src/vid/' + this.data[this.number].video + '" autoplay ><p>oops! no video 😢</p></video>';
+      } else {
+        video.innerHTML = '<div id="video" class="video"><div class="video--intro"><p>JWR Mission Control</p></div></div>';
+      }
     }
   }
 };
