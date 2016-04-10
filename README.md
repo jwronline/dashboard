@@ -78,6 +78,10 @@ This will setup a local server that will mirror all keypresses etc. to the other
 * toggle help
   * ?
 
+### Other resources
+
+The script that has to be used while running this dashboard is available to view at [gh.jwronline.be/jwr-shuttle/](http://gh.jwronline.be/jwr-shuttle/) and on [github](https://github.com/jwronline/jwr-shuttle). The program that's used currently for each computer individually is also on [github](https://github.com/jwronline/shuttle-commmand).
+
 ## Contributing
 
 Right now this is a shell of what it could become, it can use real data, more variable data and more configuring. It should also in long term be connected to what the players see and enter on their consoles.
