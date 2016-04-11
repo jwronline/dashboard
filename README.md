@@ -76,7 +76,9 @@ This will setup a local server that will mirror all keypresses etc. to the other
     * p
     * h
 * toggle help
-  * ?
+    * ?
+* show remote
+    * r
 
 ### Other resources
 

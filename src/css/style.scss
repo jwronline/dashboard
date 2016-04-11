@@ -8,11 +8,15 @@
   box-sizing: border-box;
 }
 
+button {
+  padding: initial;
+  margin: initial;
+}
+
 html {
   font-family: -apple-system, sans-serif;
   background-color: #111;
   color: #FFF;
-
 }
 
 body {

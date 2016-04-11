@@ -217,6 +217,17 @@ var step = {
 };
 
 /**
+ * The remote function
+ * @type {Object}
+ */
+var remote = {
+  show: function(){
+    var rem = window.open('src/html/remote.html','remote', 'menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=300,height=300');
+    help.classList.add('help__hidden');
+    rem.focus();
+  }
+}
+/**
  * The timer holding
  * - the current MET
  * - add one second
@@ -295,6 +306,9 @@ window.addEventListener('keydown', function(e) {
     e.preventDefault();
     // toggle the running of the time
     timer.toggle();
+    // r show remote
+  } else if (e.keyCode === 82) {
+    remote.show();
     // ? show help
   } else if (e.keyCode === 191 || e.keyCode === 188) {
     help.classList.toggle('help__hidden');
