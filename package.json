@@ -1,0 +1,31 @@
+{
+  "name": "Shuttle",
+  "version": "1.0.0",
+  "description": "A dashboard for a shuttle missions",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron app.js",
+    "build": "node node_modules/electron-packager/cli.js _site --platform=linux,darwin,win32 --arch=x64 --overwrite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwronline/dashboard.git"
+  },
+  "keywords": [
+    "space shuttle",
+    "jwr",
+    "nasa",
+    "dashboard"
+  ],
+  "author": "Haroen Viaene",
+  "bugs": {
+    "url": "https://github.com/jwronline/dashboard/issues"
+  },
+  "homepage": "https://github.com/jwronline/dashboard#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^0.37.0"
+  },
+  "dependencies": {
+    "electron-packager": "^6.0.2"
+  }
+}
