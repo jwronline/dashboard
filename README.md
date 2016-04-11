@@ -19,10 +19,10 @@ There are several ways to running this dashboard
 
 #### Static (1 display)
 
-Go to the ["releases"](https://github.com/jwronline/dashboard/releases/) tab and download the newest version of `dashboard.zip`. You can unzip that file and open `index.html` in your favourite browser.
+Go to the ["releases"](https://github.com/jwronline/dashboard/releases/) tab and download the newest version of `Shuttle-platform.zip`. You can unzip that and open the program.
 
-- no real ISS data
 - updated ISS data if an internet connection present
+- a program
 - 1 display
 - completely offline
 - easy
@@ -32,6 +32,7 @@ Go to the ["releases"](https://github.com/jwronline/dashboard/releases/) tab and
 Go to [gh.jwronline.be/dashboard/](http://gh.jwronline.be/dashboard/) on every computer you want to see it.
 
 - needs to have network
+- works in the browser
 - up to date ISS data
 - not automatically synchronised (you need to push synchronously)
 - easiest
