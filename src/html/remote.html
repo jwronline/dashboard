@@ -18,16 +18,19 @@ html {
 
 <body>
   <h1>remote</h1>
-  <button onclick="javascript:window.opener.step.decline();updateText()">decline</button>
-  <button onclick="javascript:window.opener.step.advance();updateText()">advance</button>
-  <button onclick="javascript:window.opener.timer.toggle();updateText()">hold</button>
+  <button onclick="javascript:window.opener.postMessage('step.decline();','*');updateText()">decline</button>
+  <button onclick="javascript:window.opener.postMessage('step.advance();','*');updateText()">advance</button>
+  <button onclick="javascript:window.opener.postMessage('timer.toggle();','*');updateText()">hold</button>
   <p>next stage: <span id="next"></span></p>
   <script>
   var next = document.getElementById('next');
   var updateText = function() {
-    next.innerHTML = window.opener.step.data[window.opener.step.number + 1].name;
+    window.opener.postMessage('event.source.postMessage(step.data[step.number + 1].name,"*")','*');
   };
   updateText();
+  window.addEventListener('message', function(event){
+    next.innerHTML = event.data;
+  }, false);
   </script>
 </body>
 

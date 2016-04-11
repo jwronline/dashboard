@@ -227,6 +227,11 @@ var remote = {
     rem.focus();
   }
 }
+
+window.addEventListener("message", function(event){
+  eval(event.data);
+}, false);
+
 /**
  * The timer holding
  * - the current MET
