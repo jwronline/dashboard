@@ -9,6 +9,8 @@ This is a dashboard to use with a space shuttle flight following [shuttle-comman
 
 Inspired by NASA's [MCC](https://en.wikipedia.org/wiki/Christopher_C._Kraft_Jr._Mission_Control_Center)
 
+![screenshot](src/img/screenshot.png)
+
 ## Usage
 
 ### Setup
