@@ -23,9 +23,11 @@ html {
   <button onclick="javascript:window.opener.timer.toggle();updateText()">hold</button>
   <p>next stage: <span id="next"></span></p>
   <script>
+  var next = document.getElementById('next');
   var updateText = function() {
     next.innerHTML = window.opener.step.data[window.opener.step.number + 1].name;
-  }
+  };
+  updateText();
   </script>
 </body>
 
