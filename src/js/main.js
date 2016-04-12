@@ -56,21 +56,48 @@ if (!navigator.onLine) {
     position: "top-left"
   }));
 
+  var line = new mapboxgl.GeoJSONSource({
+    "data": {"type":"FeatureCollection","features":[{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[-119.3167870917,-46.531659950566],[-99.018583887099,-35.777385411671],[-84.397054785368,-22.119934614843],[-72.692621944016,-7.1671054831952],[-61.81526072935,8.1483715584995],[-49.971540149093,23.071681846179],[-35.015607277284,36.632621724901],[-14.132832420817,47.130275623459],[13.82049696657,51.76682021298],[42.617610589183,48.48490106133],[64.824327451434,38.810490610252],[80.620798066959,25.647761610685],[92.840824509364,10.89118437185],[103.75266788073,-4.4033108759685],[115.16396892378,-19.473673902861],[129.06330757415,-33.452331449791],[148.11304572056,-44.900711646668],[174.38285485558,-51.300147293497]]}},{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[-156.21814539954,-50.081888274776],[-132.11338100223,-41.826111604545],[-114.93336502289,-29.396152350432],[-102.03008456192,-14.965798950153],[-90.95424357904,0.25895828659825],[-79.839136517674,15.482258810679],[-66.799546574046,29.896797318396],[-49.335542915143,42.25468442897],[-24.815820760543,50.302046795573],[4.7728267801048,51.153693943374],[30.81113735973,44.39939448891],[49.576762211025,32.720350182441],[63.305818292148,18.615061023141],[74.651089380952,3.494305581566],[85.58356293247,-11.784355279483],[97.9169459486,-26.455864422845],[113.9422340824,-39.446124156667],[136.45025004958,-48.827691543859],[165.30358515119,-51.723218668437]]}},{"type":"Feature","properties":{},"geometry":{"type":"LineString","coordinates":[[-167.10580412833,-46.786525220246],[-146.59254981185,-36.157574547762],[-131.84206621369,-22.559653382053]]}}]}
+  });
+
+  var point = new mapboxgl.GeoJSONSource({
+    "data": {
+      "type": "Point",
+      "coordinates": [-131.84206621369,-22.559653382053]
+    }
+  });
+
+  map.on('style.load', function () {
+    map.addSource('point', point);
+    map.addLayer({
+        "id": "point",
+        "type": "symbol",
+        "source": "point",
+        "layout": {
+            "icon-image": "star-15",
+        },
+    });
+    map.addSource('line', line);
+    map.addLayer({
+        "id": "line",
+        "type": "line",
+        "source": "line",
+        "paint": {
+          "line-color": "#CCC",
+          "line-width": 2
+        }
+    });
+  });
+
   /**
    * Poll the iss data and put it on the map
    * needs:
    * - a mapbox gl map in '#map' and variable name 'map'
    */
   var pollISS = function() {
-    var geojson = {
-      "type": "geojson",
-      "data": {
-        "type": "FeatureCollection",
-        "features": []
-      }
-    }
 
     var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
+    // get approximately the last two orbits
     var date = new Date();
     for (var i = 200; i > 0; i -= 5) {
       if (i !== 200) {
@@ -82,27 +109,25 @@ if (!navigator.onLine) {
     }
     getJSON(url)
       .then(function(data) {
-        // todo: use proper updateSoure()
-        // map.removeSource('route');
-        // map.removeSource('final');
 
-        var coords = [];
+        var geojson = {
+          "type": "FeatureCollection",
+          "features": []
+        }
 
         var current = {
-          "type": "Feature",
-          "geometry": {
             "type": "Point",
             "coordinates": [data[data.length - 1].longitude, data[data.length - 1].latitude]
-          },
-          "properties": {
-            "title": "Current location"
-          }
         }
+
+        point.setData(current);
+
+        var coords = [];
 
         for (var i in data) {
           if (i != 0) {
             if (data[i].longitude - data[i - 1].longitude > 200 || data[i].longitude - data[i - 1].longitude < -200) {
-              geojson.data.features.push({
+              geojson.features.push({
                 "type": "Feature",
                 "properties": {},
                 "geometry": {
@@ -115,44 +140,15 @@ if (!navigator.onLine) {
           }
           coords.push([data[i].longitude, data[i].latitude]);
         }
-        geojson.data.features.push({
+        geojson.features.push({
           "type": "Feature",
           "properties": {},
           "geometry": {
             "type": "LineString",
             "coordinates": coords
           }
-        }, current);
-
-        map.addSource("route", geojson);
-        map.addLayer({
-          "id": "route",
-          "type": "line",
-          "source": "route",
-          "layout": {
-            "line-join": "round",
-            "line-cap": "round"
-          },
-          "paint": {
-            "line-color": "#CCC",
-            "line-width": 2
-          }
         });
-        map.addSource("final", {
-          "type": "geojson",
-          "data": current
-        });
-        map.addLayer({
-          "id": "final",
-          "type": "symbol",
-          "source": "final",
-          "layout": {
-            // "icon-image": "rocket-15"
-            // "icon-image": "triangle-15"
-            "icon-image": "star-15"
-          }
-        });
-
+        line.setData(geojson);
       }),
       function(status) {
         console.warn(status);
