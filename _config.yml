@@ -15,7 +15,7 @@ scripts:
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js'
   - 'https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'
   - 'src/js/main.js'
-favicon: 'src/img/favicon.png'
+favicon: 'src/img/favicon-264.png'
 sass:
   style: compressed
 exclude:

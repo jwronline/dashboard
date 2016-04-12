@@ -93,6 +93,8 @@ Right now this is a shell of what it could become, it can use real data, more va
 
 ## License
 
+Icon is based on [Space Shuttle by Giuditta Valentina Gentile from the Noun Project](https://thenounproject.com/term/space-shuttle/302031/).
+
 [![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 This is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). No warranty whatsoever.
