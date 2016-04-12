@@ -4,8 +4,8 @@
   "description": "A dashboard for a shuttle missions",
   "main": "app.js",
   "scripts": {
-    "start": "electron app.js",
-    "build": "node node_modules/electron-packager/cli.js _site --platform=linux,darwin,win32 --arch=x64 --overwrite"
+    "start": "node node_modules/electron-prebuilt/cli.js _site/app.js",
+    "build": "node node_modules/electron-packager/cli.js _site --platform=linux,darwin --icon=_site/src/img/favicon.icns --arch=x64 --overwrite;node node_modules/electron-packager/cli.js _site --platform=win32 --arch=x64 --overwrite"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,7 @@
   },
   "homepage": "https://github.com/jwronline/dashboard#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.0"
-  },
-  "dependencies": {
+    "electron-prebuilt": "^0.37.0",
     "electron-packager": "^6.0.2"
   }
 }

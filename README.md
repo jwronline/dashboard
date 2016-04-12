@@ -9,6 +9,8 @@ This is a dashboard to use with a space shuttle flight following [shuttle-comman
 
 Inspired by NASA's [MCC](https://en.wikipedia.org/wiki/Christopher_C._Kraft_Jr._Mission_Control_Center)
 
+![screenshot](src/img/screenshot.png)
+
 ## Usage
 
 ### Setup
@@ -17,10 +19,10 @@ There are several ways to running this dashboard
 
 #### Static (1 display)
 
-Go to the ["releases"](https://github.com/jwronline/dashboard/releases/) tab and download the newest version of `dashboard.zip`. You can unzip that file and open `index.html` in your favourite browser.
+Go to the ["releases"](https://github.com/jwronline/dashboard/releases/) tab and download the newest version of `Shuttle-platform.zip`. You can unzip that and open the program.
 
-- no real ISS data
 - updated ISS data if an internet connection present
+- a program
 - 1 display
 - completely offline
 - easy
@@ -30,6 +32,7 @@ Go to the ["releases"](https://github.com/jwronline/dashboard/releases/) tab and
 Go to [gh.jwronline.be/dashboard/](http://gh.jwronline.be/dashboard/) on every computer you want to see it.
 
 - needs to have network
+- works in the browser
 - up to date ISS data
 - not automatically synchronised (you need to push synchronously)
 - easiest
@@ -89,6 +92,8 @@ The script that has to be used while running this dashboard is available to view
 Right now this is a shell of what it could become, it can use real data, more variable data and more configuring. It should also in long term be connected to what the players see and enter on their consoles.
 
 ## License
+
+Icon is based on [Space Shuttle by Giuditta Valentina Gentile from the Noun Project](https://thenounproject.com/term/space-shuttle/302031/).
 
 [![Creative Commons Licence](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
