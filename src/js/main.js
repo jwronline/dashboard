@@ -154,6 +154,11 @@ if (!navigator.onLine) {
         console.warn(status);
       };
   }
+
+  pollISS();
+  setInterval(function() {
+    pollISS();
+  }, 10000);
 }
 /**
  * The main object holding:
@@ -179,8 +184,6 @@ var step = {
     if (!this.data[this.number]) {
       alert('this step doesn\'t exist!');
     } else {
-      // getting the position of the iss
-      pollISS();
       // name
       counter.innerHTML = this.data[this.number].name;
       // texts
