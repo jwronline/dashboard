@@ -237,6 +237,15 @@
     - "SSME 3: 0.0%"
 
 -
+  name: orbitrapport
+  text:
+    - 'vorm: cirkelvormig'
+    - 'inclinatie: 28.5°'
+    - 'hoogte:     176.4 mijl'
+    - 'snelheid:   25.319 fps'
+    - geplande baan bereikt
+
+-
   name: Ontplooien vrachtdeuren
   text:
     - begin ontplooien vrachtdeuren
@@ -359,6 +368,15 @@
     - 1
     - ontsteking van beide motoren
     - Japetus is klaar voor een rendez-vous met Freedom
+
+-
+  name: OMS voltooid
+  text:
+    - klaar voor voltooiing OMS-2
+    - 'SSME 1: 0.0%'
+    - 'SSME 2: 0.0%'
+    - 'SSME 3: 0.0%'
+    - OMS-2 voltooid
 
 #--> fill in please
 #--> find videos
