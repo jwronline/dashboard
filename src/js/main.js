@@ -319,3 +319,62 @@ window.addEventListener('keydown', function(e) {
     help.classList.toggle('help__hidden');
   }
 });
+
+/**
+ * Only run when in electron
+ * shows the context menu
+ * @param  {Object} process only present in electron
+ */
+if (process) {
+  const electronRemote = require('electron').remote;
+  const Menu = electronRemote.Menu;
+  const MenuItem = electronRemote.MenuItem;
+
+  var menu = new Menu();
+  menu.append(new MenuItem({
+    label: 'next step',
+    click: function() {
+      step.advance();
+    }
+  }));
+  menu.append(new MenuItem({
+    label: 'previous step',
+    click: function() {
+      step.decline();
+    }
+  }));
+  menu.append(new MenuItem({
+    type: 'separator'
+  }));
+  menu.append(new MenuItem({
+    label: 'holding',
+    type: 'checkbox',
+    checked: true,
+    click: function() {
+      timer.toggle();
+    }
+  }));
+  menu.append(new MenuItem({
+    type: 'separator'
+  }));
+  menu.append(new MenuItem({
+    label: 'show remote',
+    click: function() {
+      remote.show();
+    }
+  }));
+  menu.append(new MenuItem({
+    type: 'separator'
+  }));
+  menu.append(new MenuItem({
+    label: 'help',
+    click: function() {
+      help.classList.toggle('help__hidden');
+    }
+  }));
+
+  window.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    menu.popup(electronRemote.getCurrentWindow());
+  }, false);
+}
