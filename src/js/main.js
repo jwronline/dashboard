@@ -205,7 +205,7 @@ var step = {
           return;
         }
         print(texts[i++]);
-      }, 1);
+      }, 1000);
       // video
       if (typeof this.data[this.number].video !== 'undefined') {
         video.innerHTML = '<video src="src/vid/' + this.data[this.number].video + '" autoplay onclick="javascript:this.muted = !this.muted;"><p>oops! no video 😢</p></video>';
@@ -325,7 +325,7 @@ window.addEventListener('keydown', function(e) {
  * shows the context menu
  * @param  {Object} process only present in electron
  */
-if (typeof process.versions['electron'] !=== 'undefined') {
+if (typeof window.process !== 'undefined') {
   const electronRemote = require('electron').remote;
   const Menu = electronRemote.Menu;
   const MenuItem = electronRemote.MenuItem;
