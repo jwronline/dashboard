@@ -325,7 +325,7 @@ window.addEventListener('keydown', function(e) {
  * shows the context menu
  * @param  {Object} process only present in electron
  */
-if (process) {
+if (typeof process.versions['electron'] !=== 'undefined') {
   const electronRemote = require('electron').remote;
   const Menu = electronRemote.Menu;
   const MenuItem = electronRemote.MenuItem;
