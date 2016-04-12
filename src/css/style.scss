@@ -137,8 +137,9 @@ kbd {
     display: initial;
     overflow: auto;
 
-    p {
+    pre {
       margin: 1em;
+      font: inherit;
     }
   }
 

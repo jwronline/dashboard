@@ -191,11 +191,11 @@ var step = {
       var texts = this.data[this.number].text;
       var i = 0;
       var print = function(text) {
-        var p = document.createElement('p');
-        p.innerHTML = '$ ' + text;
-        if (this.data[this.number].style) p.classList.add(this.data[this.number].style);
-        data.appendChild(p);
-        p.scrollIntoView({
+        var pre = document.createElement('pre');
+        pre.innerHTML = '$ ' + text;
+        if (this.data[this.number].style) pre.classList.add(this.data[this.number].style);
+        data.appendChild(pre);
+        pre.scrollIntoView({
           behaviour: 'smooth'
         });
       }.bind(this);
@@ -205,7 +205,7 @@ var step = {
           return;
         }
         print(texts[i++]);
-      }, 1000);
+      }, 1);
       // video
       if (typeof this.data[this.number].video !== 'undefined') {
         video.innerHTML = '<video src="src/vid/' + this.data[this.number].video + '" autoplay onclick="javascript:this.muted = !this.muted;"><p>oops! no video 😢</p></video>';
