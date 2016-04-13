@@ -20,35 +20,42 @@ html {
 }
 
 body {
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   min-height: 100vh;
 }
 
 .header {
   padding: 1em;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: baseline;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
   -webkit-align-items: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -ms-flex-align: baseline;
+      align-items: baseline;
+
+  @media (max-width: 60rem) {
+    font-size: .8em;
+  }
+  @media (max-width: 40rem) {
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
 }
 
 h1 a {
@@ -102,19 +109,15 @@ kbd {
 .container {
   min-height: 10em;
   position: relative;
-  display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 2;
   -webkit-flex: 2 1 10em;
-      -ms-flex: 2 1 10em;
-          flex: 2 1 10em;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
+  -ms-flex: 2 1 10em;
+      flex: 2 1 10em;
   -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 
   &__streams {
     -webkit-box-flex: 1;
@@ -125,11 +128,9 @@ kbd {
 
   &__large {
     @media (max-width: 40em) {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
       -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
     }
   }
 
@@ -150,8 +151,7 @@ kbd {
 }
 
 #map,video,img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -170,23 +170,18 @@ kbd {
   width: 100%;
   height: 100%;
   &--intro {
-    display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
+    -ms-flex-pack: center;
+        justify-content: center;
     -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
     height: 100%;
   }
 }
