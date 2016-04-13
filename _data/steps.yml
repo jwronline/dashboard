@@ -239,7 +239,7 @@
 -
   name: orbitrapport
   text:
-    - 'vorm: cirkelvormig'
+    - 'vorm:       cirkelvormig'
     - 'inclinatie: 28.5°'
     - 'hoogte:     176.4 mijl'
     - 'snelheid:   25.319 fps'
@@ -410,6 +410,16 @@
   text:
     - 'OMS: 68.3%'
     - 'RCS: 59.0%'
+
+-
+  name: afronden EVA
+  text:
+    - 'overblijvende tijd: 5 minuten  0 seconden'
+    - 'overblijvende tijd: 4 minuten 59 seconden'
+    - 'overblijvende tijd: 4 minuten 58 seconden'
+    - 'overblijvende tijd: 4 minuten 57 seconden'
+    - 'overblijvende tijd: 4 minuten 56 seconden'
+    - 'overblijvende tijd: 4 minuten 55 seconden'
 
 #--> fill in please
 #--> find videos
