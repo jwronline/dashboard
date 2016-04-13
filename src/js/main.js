@@ -99,8 +99,8 @@ if (!navigator.onLine) {
     var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
     // get approximately the last two orbits
     var date = new Date();
-    for (var i = 200; i > 0; i -= 5) {
-      if (i !== 200) {
+    for (var i = 230; i > 0; i -= 5) {
+      if (i !== 230) {
         url += ',';
       }
       var temp = new Date();
