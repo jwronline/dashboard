@@ -378,6 +378,39 @@
     - 'SSME 3: 0.0%'
     - OMS-2 voltooid
 
+-
+  name: orbitrapport
+  text:
+    - 'baan:       97/275'
+    - 'inclinatie: 28.5°'
+    - 'snelheid:   25.259 fps'
+    - 'hoogte:     228.6 mijl'
+    - juiste positie voor rendez-vous
+
+-
+  name: inkomend bericht
+  text:
+    - 'belangrijk: inkomend bericht'
+    - PAO deelt deze nu mee
+
+-
+  name: inschakeling satelliet
+  text:
+    - 'elektrische stroom:  actief'
+    - 'temperatuurcontrole: actief'
+
+-
+  name: activatie satelliet
+  text:
+    - 'communicatiemodule: actief'
+    - 'stuurmodule:        actief'
+
+-
+  name: controle brandstofniveau
+  text:
+    - 'OMS: 68.3%'
+    - 'RCS: 59.0%'
+
 #--> fill in please
 #--> find videos
 ## De-orbit and landing
