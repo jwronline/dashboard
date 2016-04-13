@@ -421,6 +421,19 @@
     - 'overblijvende tijd: 4 minuten 56 seconden'
     - 'overblijvende tijd: 4 minuten 55 seconden'
 
+-
+  name: contact met Freedom
+  text:
+    - visueel contact
+    - audioverbinding
+    - 'afstand: 5000f'
+
+-
+  name: PROX OPS
+  text:
+    - go voor PROX OPS
+    - naderingskoers ingesteld
+
 #--> fill in please
 #--> find videos
 ## De-orbit and landing
