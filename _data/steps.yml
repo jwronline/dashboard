@@ -158,9 +158,10 @@
     - motoren op volle kracht
 
 -
-  name: SRB-sep (afwerpen vastbrandstofraketten)
+  name: SRB-sep
   video: srb-sep.mp4
   text:
+    - afwerping SRB's
     - Bereid je voor op SRB Sep
     - SRB Sep in 3
     - 2
@@ -433,6 +434,14 @@
   text:
     - go voor PROX OPS
     - naderingskoers ingesteld
+
+-
+  name: afbreken EVA
+  style: red
+  text:
+    - EVA voltooid
+    - keer terug naar de cabine
+    - EVA voltooid
 
 #--> fill in please
 #--> find videos
