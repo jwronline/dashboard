@@ -68,15 +68,6 @@ if (!navigator.onLine) {
   });
 
   map.on('style.load', function () {
-    map.addSource('point', point);
-    map.addLayer({
-        "id": "point",
-        "type": "symbol",
-        "source": "point",
-        "layout": {
-            "icon-image": "star-15",
-        },
-    });
     map.addSource('line', line);
     map.addLayer({
         "id": "line",
@@ -86,6 +77,15 @@ if (!navigator.onLine) {
           "line-color": "#CCC",
           "line-width": 2
         }
+    });
+    map.addSource('point', point);
+    map.addLayer({
+        "id": "point",
+        "type": "symbol",
+        "source": "point",
+        "layout": {
+            "icon-image": "star-15",
+        },
     });
   });
 
