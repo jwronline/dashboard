@@ -21,15 +21,21 @@ html {
   <button onclick="javascript:window.opener.postMessage('step.decline();','*');updateText()">decline</button>
   <button onclick="javascript:window.opener.postMessage('step.advance();','*');updateText()">advance</button>
   <button onclick="javascript:window.opener.postMessage('timer.toggle();','*');updateText()">hold</button>
+  <select onchange="javascript:window.opener.postMessage('step.set('+this.value+');','*');updateText()" id="list">
+    {% for i in site.data.steps %}
+      <option value="{{forloop.index0}}">{{i.name}}</option>
+    {% endfor %}
+  </select>
   <p>next stage: <span id="next"></span></p>
   <script>
   var next = document.getElementById('next');
   var updateText = function() {
-    window.opener.postMessage('event.source.postMessage(step.data[step.number + 1].name,"*")','*');
+    window.opener.postMessage('event.source.postMessage({next: step.data[step.number + 1].name, current: step.number},"*")','*');
   };
   updateText();
   window.addEventListener('message', function(event){
-    next.innerHTML = event.data;
+    next.innerHTML = event.data.next;
+    list.value = event.data.current;
   }, false);
   </script>
 </body>

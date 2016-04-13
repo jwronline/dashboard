@@ -180,6 +180,10 @@ var step = {
     this.number++;
     this.display();
   },
+  set: function(i) {
+    this.number = i;
+    this.display();
+  },
   display: function() {
     if (!this.data[this.number]) {
       alert('this step doesn\'t exist!');
