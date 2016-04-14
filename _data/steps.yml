@@ -455,7 +455,63 @@
   text:
     - nadering manueel
 
+-
+  name: auto dock
+  text:
+    - 'relatieve afstand:  500f'
+    - 'relatieve snelheid: 10fps'
+    - verschuiving en snelheid aanhouden
+    - stel radar vast
+    - enter auto dock programma
 
+-
+  name: auto dock voltooid
+  text:
+    - 'relatieve afstand:  50f'
+    - auto dock uitgevoerd
+    - ontplooien koppelingsadapter
+
+-
+  name: docking
+  text:
+    - soft dock
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - hard dock
+    - ...
+    - ...
+    - ...
+    - koppeling voltooid
+
+-
+  name: luchtsluis
+  text:
+    - luchtsluis op druk zetten
+    - 20
+    - 19
+    - 18
+    - 17
+    - 16
+    - 15
+    - 14
+    - 13
+    - 12
+    - 11
+    - 10
+    - 9
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+    - luchtsluis op druk
 
 #--> fill in please
 #--> find videos
