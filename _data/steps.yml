@@ -569,6 +569,130 @@
   name: positionering
   text:
     - schakel RCS in om te richten voor een de-orbit
+    - ...
+    - ...
+    - ...
+    - ...
+    - inladen OMS-programma
+    - sluit de vrachtdeuren
 
-#--> fill in please
+-
+  name: OMS-3
+  text:
+    - OMS Burn in 10
+    - 9
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+    - OMS ingeschakeld
+    - "SSME 1: 50.0%"
+    - "SSME 2: 50.0%"
+    - "SSME 3: 50.0%"
+
+-
+  name: start APU's
+  text:
+    - 'APU 1: ingeschakeld'
+    - 'APU 2: ingeschakeld'
+    - 'APU 3: ingeschakeld'
+
+-
+  name: omkeermaneuver
+  text:
+    - begin omkeermaneuver
+    - go om dampkring binnen te dringen
+    - aanvlieghoek van 35°
+
+-
+  name: S-bochten
+  text:
+    - begin eerste S-bocht
+    - WXT geeft een laatste controle van de omstandigheden
+    - ...
+    - ...
+    - ...
+    - ...
+    - ontplooi luchtrem tot 65%
+
+-
+  name: TAEM interface
+  text:
+    - Terminal Area Energy Management
+    - ...
+    - ...
+    - ...
+    - luchtrem tot 80%
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ontplooi de luchtsondes
+
+-
+  name: laatste S-bocht
+  text:
+    - go voor laatste S-bocht
+    - S-bocht begonnen
+    - ...
+    - ...
+    - ...
+    - landingskonvooi is ready
+
+-
+  name: HAC
+  text:
+    - Heading Alignment Cylinder
+    - nadering in zicht
+    - klaar voor precisielanding
+
+-
+  name: RCS uitgeschakeld
+  text:
+    - 'RCS: 0.0%'
+    - ongeveer 3 minuten tot landing
+
+-
+  name: pre-flare
+  text:
+    - begin pre-flare
+    - wapen landingsgestel
+    - landingsgestel gewapend
+
+-
+  name: full flare
+  text:
+    - full flare
+
+-
+  name: touchdown
+  text:
+    - touchdown hoofdgestel
+    - ...
+    - ...
+    - ...
+    - neusgestel zakt
+    - ...
+    - ...
+    - ...
+    - touchdown neusgestel
+    - begin remmen
+
+-
+  name: wielstop
+  text:
+    - wielstop
+
+-
+  name: missie voltooid
+  style: green
+  text:
+    - missie succesvol
+
 #--> find videos
