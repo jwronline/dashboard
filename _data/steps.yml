@@ -443,6 +443,20 @@
     - keer terug naar de cabine
     - EVA voltooid
 
+-
+  name: verslag
+  text:
+    - 'relatieve afstand:  1000f'
+    - 'relatieve snelheid: 20fps'
+    - rem 12 seconden af met het voorste RCS
+
+-
+  name: manuele nadering
+  text:
+    - nadering manueel
+
+
+
 #--> fill in please
 #--> find videos
 ## De-orbit and landing
