@@ -565,7 +565,10 @@
 
 ## De-orbit and landing
 
-
+-
+  name: positionering
+  text:
+    - schakel RCS in om te richten voor een de-orbit
 
 #--> fill in please
 #--> find videos
