@@ -79,7 +79,7 @@
     - ET onder operationele druk
 
 -
-  name: Eindaftelling en Lift-off
+  name: Eindaftelling en lift-off
   video: launch.mp4
   text:
     - start automatische aftelsequentie
@@ -158,9 +158,10 @@
     - motoren op volle kracht
 
 -
-  name: SRB-sep (afwerpen vastbrandstofraketten)
+  name: SRB-sep
   video: srb-sep.mp4
   text:
+    - afwerping SRB's
     - Bereid je voor op SRB Sep
     - SRB Sep in 3
     - 2
@@ -239,7 +240,7 @@
 -
   name: orbitrapport
   text:
-    - 'vorm: cirkelvormig'
+    - 'vorm:       cirkelvormig'
     - 'inclinatie: 28.5°'
     - 'hoogte:     176.4 mijl'
     - 'snelheid:   25.319 fps'
@@ -378,8 +379,320 @@
     - 'SSME 3: 0.0%'
     - OMS-2 voltooid
 
-#--> fill in please
+-
+  name: orbitrapport
+  text:
+    - 'baan:       97/275'
+    - 'inclinatie: 28.5°'
+    - 'snelheid:   25.259 fps'
+    - 'hoogte:     228.6 mijl'
+    - juiste positie voor rendez-vous
+
+-
+  name: inkomend bericht
+  text:
+    - 'belangrijk: inkomend bericht'
+    - PAO deelt deze nu mee
+
+-
+  name: inschakeling satelliet
+  text:
+    - 'elektrische stroom:  actief'
+    - 'temperatuurcontrole: actief'
+
+-
+  name: activatie satelliet
+  text:
+    - 'communicatiemodule: actief'
+    - 'stuurmodule:        actief'
+
+-
+  name: controle brandstofniveau
+  text:
+    - 'OMS: 68.3%'
+    - 'RCS: 59.0%'
+
+-
+  name: afronden EVA
+  text:
+    - 'overblijvende tijd: 5 minuten  0 seconden'
+    - 'overblijvende tijd: 4 minuten 59 seconden'
+    - 'overblijvende tijd: 4 minuten 58 seconden'
+    - 'overblijvende tijd: 4 minuten 57 seconden'
+    - 'overblijvende tijd: 4 minuten 56 seconden'
+    - 'overblijvende tijd: 4 minuten 55 seconden'
+
+-
+  name: contact met Freedom
+  text:
+    - visueel contact
+    - audioverbinding
+    - 'afstand: 5000f'
+
+-
+  name: PROX OPS
+  text:
+    - go voor PROX OPS
+    - naderingskoers ingesteld
+
+-
+  name: afbreken EVA
+  style: red
+  text:
+    - EVA voltooid
+    - keer terug naar de cabine
+    - EVA voltooid
+
+-
+  name: verslag
+  text:
+    - 'relatieve afstand:  1000f'
+    - 'relatieve snelheid: 20fps'
+    - rem 12 seconden af met het voorste RCS
+
+-
+  name: manuele nadering
+  text:
+    - nadering manueel
+
+-
+  name: auto dock
+  text:
+    - 'relatieve afstand:  500f'
+    - 'relatieve snelheid: 10fps'
+    - verschuiving en snelheid aanhouden
+    - stel radar vast
+    - enter auto dock programma
+
+-
+  name: auto dock voltooid
+  text:
+    - 'relatieve afstand:  50f'
+    - auto dock uitgevoerd
+    - ontplooien koppelingsadapter
+
+-
+  name: docking
+  text:
+    - soft dock
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - hard dock
+    - ...
+    - ...
+    - ...
+    - koppeling voltooid
+
+-
+  name: luchtsluis
+  text:
+    - luchtsluis op druk zetten
+    - 20
+    - 19
+    - 18
+    - 17
+    - 16
+    - 15
+    - 14
+    - 13
+    - 12
+    - 11
+    - 10
+    - 9
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+    - luchtsluis op druk
+    - go voor bemannings- en vrachtstranfer
+
+-
+  name: begin loskoppeling
+  text:
+    - sluizen afgesloten
+    - go voor loskoppeling
+
+-
+  name: loskoppeling
+  text:
+    - ontgrendeling
+    - intrekken adaptor
+    - ...
+    - ...
+    - begin verwijderingsmaneuver
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - verwijderingsmaneuver voltooid
+
+-
+  name: afstand
+  text:
+    - 'relatieve afstand: 500f'
+    - geslaagde verwijdering
+    - go om de baan te verlaten
+
+-
+  name: keuze landing
+  text:
+    - WXT controleert het weer
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - landingsplaats beslist
+
+-
+  name: go voor de-orbit
+  text:
+    - alle posten bevestigen hun status
+    - de-orbit kan beginnen
+
 #--> find videos
+
+
 ## De-orbit and landing
-#--> fill in please
+
+-
+  name: positionering
+  text:
+    - schakel RCS in om te richten voor een de-orbit
+    - ...
+    - ...
+    - ...
+    - ...
+    - inladen OMS-programma
+    - sluit de vrachtdeuren
+
+-
+  name: OMS-3
+  text:
+    - OMS Burn in 10
+    - 9
+    - 8
+    - 7
+    - 6
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+    - OMS ingeschakeld
+    - "SSME 1: 50.0%"
+    - "SSME 2: 50.0%"
+    - "SSME 3: 50.0%"
+
+-
+  name: start APU's
+  text:
+    - 'APU 1: ingeschakeld'
+    - 'APU 2: ingeschakeld'
+    - 'APU 3: ingeschakeld'
+
+-
+  name: omkeermaneuver
+  text:
+    - begin omkeermaneuver
+    - go om dampkring binnen te dringen
+    - aanvlieghoek van 35°
+
+-
+  name: S-bochten
+  text:
+    - begin eerste S-bocht
+    - WXT geeft een laatste controle van de omstandigheden
+    - ...
+    - ...
+    - ...
+    - ...
+    - ontplooi luchtrem tot 65%
+
+-
+  name: TAEM interface
+  text:
+    - Terminal Area Energy Management
+    - ...
+    - ...
+    - ...
+    - luchtrem tot 80%
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ontplooi de luchtsondes
+
+-
+  name: laatste S-bocht
+  text:
+    - go voor laatste S-bocht
+    - S-bocht begonnen
+    - ...
+    - ...
+    - ...
+    - landingskonvooi is ready
+
+-
+  name: HAC
+  text:
+    - Heading Alignment Cylinder
+    - nadering in zicht
+    - klaar voor precisielanding
+
+-
+  name: RCS uitgeschakeld
+  text:
+    - 'RCS: 0.0%'
+    - ongeveer 3 minuten tot landing
+
+-
+  name: pre-flare
+  text:
+    - begin pre-flare
+    - wapen landingsgestel
+    - landingsgestel gewapend
+
+-
+  name: full flare
+  text:
+    - full flare
+
+-
+  name: touchdown
+  text:
+    - touchdown hoofdgestel
+    - ...
+    - ...
+    - ...
+    - neusgestel zakt
+    - ...
+    - ...
+    - ...
+    - touchdown neusgestel
+    - begin remmen
+
+-
+  name: wielstop
+  text:
+    - wielstop
+
+-
+  name: missie voltooid
+  style: green
+  text:
+    - missie succesvol
+
 #--> find videos

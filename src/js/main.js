@@ -68,15 +68,6 @@ if (!navigator.onLine) {
   });
 
   map.on('style.load', function () {
-    map.addSource('point', point);
-    map.addLayer({
-        "id": "point",
-        "type": "symbol",
-        "source": "point",
-        "layout": {
-            "icon-image": "star-15",
-        },
-    });
     map.addSource('line', line);
     map.addLayer({
         "id": "line",
@@ -86,6 +77,15 @@ if (!navigator.onLine) {
           "line-color": "#CCC",
           "line-width": 2
         }
+    });
+    map.addSource('point', point);
+    map.addLayer({
+        "id": "point",
+        "type": "symbol",
+        "source": "point",
+        "layout": {
+            "icon-image": "star-15",
+        },
     });
   });
 
@@ -99,8 +99,8 @@ if (!navigator.onLine) {
     var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
     // get approximately the last two orbits
     var date = new Date();
-    for (var i = 200; i > 0; i -= 5) {
-      if (i !== 200) {
+    for (var i = 230; i > 0; i -= 5) {
+      if (i !== 230) {
         url += ',';
       }
       var temp = new Date();
@@ -154,6 +154,11 @@ if (!navigator.onLine) {
         console.warn(status);
       };
   }
+
+  pollISS();
+  setInterval(function() {
+    pollISS();
+  }, 10000);
 }
 /**
  * The main object holding:
@@ -175,12 +180,14 @@ var step = {
     this.number++;
     this.display();
   },
+  set: function(i) {
+    this.number = i;
+    this.display();
+  },
   display: function() {
     if (!this.data[this.number]) {
       alert('this step doesn\'t exist!');
     } else {
-      // getting the position of the iss
-      pollISS();
       // name
       counter.innerHTML = this.data[this.number].name;
       // texts

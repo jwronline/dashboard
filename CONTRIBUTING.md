@@ -11,7 +11,11 @@ If you have questions, contact [Haroen Viaene](https://haroen.me) via any way yo
 * fix open issues
 * write steps and cut video for everything starting from `orbit`
 
+## Organisation
+
+The whole site can be both run in a regular browser by Jekyll, and for example the different `steps` of the mission are put inside the `_data/steps.yml`. Don't hesitate to contact if you've got questions, there are loads of things to do for which you don't need to know how to code.
+
 ## How does it work?
 
-This project is made with Jekyll, that means that you can run it locally using `jekyll serve` after doing `bundle install` (or having jekyll installed already). The `dashboard.zip` is the same content as will be created in `_site`.
+This project is made with a mixture of Jekyll and Electron. To have a local version of this project, first make sure you've got `ruby` and `node` installed. The next step is to make sure you've got Jekyll by doing `bundle install`. Then you can run `jekyll build` and open `index.html` in the `_site`-folder. To view the application you have to run `npm install` and `npm start`. To build a version of the application that runs standalone you can run `npm build`, which will create Windows, Mac and Linux versions of the project. In case you for example just want the Windows version, you'll manually have to run `node node_modules/electron-packager/cli.js _site --platform=win32 --arch=x64 --overwrite`.
 
