@@ -512,9 +512,60 @@
     - 2
     - 1
     - luchtsluis op druk
+    - go voor bemannings- en vrachtstranfer
 
-#--> fill in please
+-
+  name: begin loskoppeling
+  text:
+    - sluizen afgesloten
+    - go voor loskoppeling
+
+-
+  name: loskoppeling
+  text:
+    - ontgrendeling
+    - intrekken adaptor
+    - ...
+    - ...
+    - begin verwijderingsmaneuver
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - verwijderingsmaneuver voltooid
+
+-
+  name: afstand
+  text:
+    - 'relatieve afstand: 500f'
+    - geslaagde verwijdering
+    - go om de baan te verlaten
+
+-
+  name: keuze landing
+  text:
+    - WXT controleert het weer
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - landingsplaats beslist
+
+-
+  name: go voor de-orbit
+  text:
+    - alle posten bevestigen hun status
+    - de-orbit kan beginnen
+
 #--> find videos
+
+
 ## De-orbit and landing
+
+
+
 #--> fill in please
 #--> find videos
