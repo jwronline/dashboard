@@ -288,6 +288,10 @@ var timer = {
     } else {
       this.play();
     }
+  },
+  set: function(d,h,m,s) {
+    this.time = new Date(d * 86400000 + h * 3600000 + m * 60000 + s * 1000);
+    this.display();
   }
 };
 
