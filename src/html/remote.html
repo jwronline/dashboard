@@ -14,6 +14,20 @@ html {
   color: #FFF;
   text-align: center;
 }
+.inline-form {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+.inline-form input {
+  font-size: 1em;
+  width: 2em;
+  background-color: inherit;
+  color: inherit;
+  border: none;
+  border-radius: .2em;
+  margin: .2em;
+}
 </style>
 
 <body>
@@ -22,10 +36,22 @@ html {
   <button onclick="javascript:window.opener.postMessage('step.advance();','*');updateText()">advance</button>
   <button onclick="javascript:window.opener.postMessage('timer.toggle();','*');updateText()">hold</button>
   <select onchange="javascript:window.opener.postMessage('step.set('+this.value+');','*');updateText()" id="list">
+    <option value="-1" selected>Setup</option>
     {% for i in site.data.steps %}
-      <option value="{{forloop.index0}}">{{i.name}}</option>
+    <option value="{{forloop.index0}}">{{i.name}}</option>
     {% endfor %}
   </select>
+  <form class="inline-form" action="javascript:window.opener.postMessage('timer.set('+this.d.value+','+this.h.value+','+this.m.value+','+this.s.value+')','*')">
+    <input type="number" value="0" id="d">
+    <span>d</span>
+    <input type="number" value="0" id="h">
+    <span>h</span>
+    <input type="number" value="0" id="m">
+    <span>m</span>
+    <input type="number" value="0" id="s">
+    <span>s</span>
+    <button>set</button>
+  </form>
   <p>next stage: <span id="next"></span></p>
   <script>
   var next = document.getElementById('next');

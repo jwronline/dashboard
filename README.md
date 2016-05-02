@@ -85,7 +85,7 @@ This will setup a local server that will mirror all keypresses etc. to the other
 
 ### Other resources
 
-The script that has to be used while running this dashboard is available to view at [gh.jwronline.be/jwr-shuttle/](http://gh.jwronline.be/jwr-shuttle/) and on [github](https://github.com/jwronline/jwr-shuttle). The program that's used currently for each computer individually is also on [github](https://github.com/jwronline/shuttle-commmand).
+The script that has to be used while running this dashboard is available to view at [gh.jwronline.be/scripts/](http://gh.jwronline.be/scripts/) and on [github](https://github.com/jwronline/scripts). The program that's used currently for each computer individually is also on [github](https://github.com/jwronline/shuttle-commmand). An overview of the whole project is available at [gh.jwronline.be/jwr-shuttle](http://gh.jwronline.be/jwr-shuttle).
 
 ## Contributing
 
