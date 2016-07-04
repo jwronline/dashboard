@@ -672,6 +672,7 @@
 
 -
   name: touchdown
+  video: touchdown.mp4
   text:
     - touchdown hoofdgestel
     - ...
@@ -681,17 +682,25 @@
     - ...
     - ...
     - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
     - touchdown neusgestel
     - begin remmen
 
 -
   name: wielstop
+  video: wheel-stop.mp4
   text:
     - wielstop
 
 -
   name: missie voltooid
   style: green
+  video: mission-successfull-short.mp4
   text:
     - missie succesvol
 
