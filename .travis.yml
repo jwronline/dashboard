@@ -1,11 +1,11 @@
-language: ruby
-rvm:
-  - 2.0.0
+language: node_js
 node_js:
   - 6
 branches:
   only:
   - gh-pages
+before_install:
+  - rvm install 2.2.2
 install:
   - bundle install
   - npm install
