@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "electron _site/app.js",
-    "build": "electron-packager _site --platform=linux,darwin --icon=_site/src/img/favicon.icns --arch=x64 --overwrite;node node_modules/electron-packager/cli.js _site --platform=win32 --arch=x64 --overwrite"
+    "build": "electron-packager _site --platform=linux,darwin --icon=_site/src/img/favicon.icns --arch=x64 --overwrite;electron-packager _site --platform=win32 --icon=_site/src/img/favicon.ico --arch=x64 --overwrite"
   },
   "repository": {
     "type": "git",
