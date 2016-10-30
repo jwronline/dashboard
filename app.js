@@ -28,7 +28,7 @@ function createWindow() {
 
   // external urls should be opened in the regular browser
   function handleRedirect(e, url) {
-    if(url != mainWindow.webContents.getURL()) {
+    if(url.includes('http')) {
       e.preventDefault();
       opn(url);
     }
