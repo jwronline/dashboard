@@ -160,6 +160,7 @@ if (!navigator.onLine) {
     pollISS();
   }, 10000);
 }
+
 /**
  * The main object holding:
  * - the current step
@@ -172,19 +173,19 @@ if (!navigator.onLine) {
 var step = {
   data: {{site.data.steps | jsonify}},
   number: -1,
-  decline: function() {
+  decline() {
     this.number--;
     this.display();
   },
-  advance: function() {
+  advance() {
     this.number++;
     this.display();
   },
-  set: function(i) {
+  set(i) {
     this.number = i;
     this.display();
   },
-  display: function() {
+  display() {
     if (!this.data[this.number]) {
       alert('this step doesn\'t exist!');
     } else {
@@ -211,7 +212,7 @@ var step = {
       }, 1000);
       // video
       if (typeof this.data[this.number].video !== 'undefined') {
-        video.innerHTML = '<video src="src/vid/' + this.data[this.number].video + '" autoplay onclick="javascript:this.muted = !this.muted;"><p>oops! no video 😢</p></video>';
+        video.innerHTML = `<video src="src/vid/${this.data[this.number].video}" autoplay onclick="javascript:this.muted = !this.muted;"><p>oops! no video 😢</p></video>`;
       } else {
         video.innerHTML = '<div id="video" class="video"><div class="video--intro"><p>JWR Mission Control</p></div></div>';
       }
@@ -224,7 +225,7 @@ var step = {
  * @type {Object}
  */
 var remote = {
-  show: function(){
+  show(){
     var rem = window.open('src/html/remote.html','remote', 'menubar=no,location=no,resizable=no,scrollbars=no,status=no,width=300,height=300');
     help.classList.add('help__hidden');
     rem.focus();
@@ -250,7 +251,7 @@ var timer = {
   time: _time,
   running: false,
   timeInterval: null,
-  display: function() {
+  display() {
     if (this.time.getTime() < 0) {
       sign.innerHTML = '-';
     } else {
@@ -266,30 +267,30 @@ var timer = {
     seconds.innerHTML = (s < 10 ? '0' : '') + s;
     holding.innerHTML = this.running ? '' : '(H)';
   },
-  tick: function() {
+  tick() {
     this.time.setSeconds(this.time.getSeconds() + 1);
     this.display();
   },
-  play: function() {
+  play() {
     this.timeInterval = setInterval(function() {
       this.tick();
     }.bind(this), 1000);
     this.running = true;
     this.display();
   },
-  pause: function() {
+  pause() {
     clearInterval(this.timeInterval);
     this.running = false;
     this.display();
   },
-  toggle: function() {
+  toggle() {
     if (this.running) {
       this.pause();
     } else {
       this.play();
     }
   },
-  set: function(d,h,m,s) {
+  set(d,h,m,s) {
     this.time = new Date(d * 86400000 + h * 3600000 + m * 60000 + s * 1000);
     this.display();
   }
@@ -340,13 +341,13 @@ if (typeof window.process !== 'undefined') {
   var menu = new Menu();
   menu.append(new MenuItem({
     label: 'next step',
-    click: function() {
+    click() {
       step.advance();
     }
   }));
   menu.append(new MenuItem({
     label: 'previous step',
-    click: function() {
+    click() {
       step.decline();
     }
   }));
@@ -357,7 +358,7 @@ if (typeof window.process !== 'undefined') {
     label: 'holding',
     type: 'checkbox',
     checked: true,
-    click: function() {
+    click() {
       timer.toggle();
     }
   }));
@@ -366,7 +367,7 @@ if (typeof window.process !== 'undefined') {
   }));
   menu.append(new MenuItem({
     label: 'show remote',
-    click: function() {
+    click() {
       remote.show();
     }
   }));
@@ -375,7 +376,7 @@ if (typeof window.process !== 'undefined') {
   }));
   menu.append(new MenuItem({
     label: 'help',
-    click: function() {
+    click() {
       help.classList.toggle('help__hidden');
     }
   }));
