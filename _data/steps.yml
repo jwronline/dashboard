@@ -372,6 +372,7 @@
 
 -
   name: OMS voltooid
+  video: samson.mp4
   text:
     - klaar voor voltooiing OMS-2
     - 'SSME 1: 0.0%'
@@ -390,6 +391,7 @@
 
 -
   name: inkomend bericht
+  video: frimout.mp4
   text:
     - 'belangrijk: inkomend bericht'
     - PAO deelt deze nu mee
@@ -672,6 +674,7 @@
 
 -
   name: touchdown
+  video: touchdown.mp4
   text:
     - touchdown hoofdgestel
     - ...
@@ -681,17 +684,25 @@
     - ...
     - ...
     - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
+    - ...
     - touchdown neusgestel
     - begin remmen
 
 -
   name: wielstop
+  video: wheel-stop.mp4
   text:
     - wielstop
 
 -
   name: missie voltooid
   style: green
+  video: mission-successfull-short.mp4
   text:
     - missie succesvol
 

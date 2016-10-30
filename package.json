@@ -4,8 +4,8 @@
   "description": "A dashboard for a shuttle missions",
   "main": "app.js",
   "scripts": {
-    "start": "node node_modules/electron-prebuilt/cli.js _site/app.js",
-    "build": "node node_modules/electron-packager/cli.js _site --platform=linux,darwin --icon=_site/src/img/favicon.icns --arch=x64 --overwrite;node node_modules/electron-packager/cli.js _site --platform=win32 --arch=x64 --overwrite"
+    "start": "electron _site/app.js",
+    "build": "electron-packager _site --platform=linux,darwin --icon=_site/src/img/favicon.icns --arch=x64 --overwrite;electron-packager _site --platform=win32 --icon=_site/src/img/favicon.ico --arch=x64 --overwrite"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,13 @@
   "bugs": {
     "url": "https://github.com/jwronline/dashboard/issues"
   },
+  "license": "CC-BY-SA-4.0",
   "homepage": "https://github.com/jwronline/dashboard#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.37.0",
-    "electron-packager": "^6.0.2"
+    "electron": "^1.4.4",
+    "electron-packager": "^8.2.0"
+  },
+  "dependencies": {
+    "opn": "^4.0.2"
   }
 }

@@ -21,3 +21,6 @@ sass:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - Shuttle-darwin-x64
+  - Shuttle-linux-x64
+  - Shuttle-win32-x64
