@@ -8,6 +8,8 @@ branches:
   - gh-pages
 before_install:
   - rvm install 2.2.2
+  # wine needs 32 bit architecture
+  - sudo dpkg --add-architecture i386
   - sudo apt-get -qq update
   - sudo apt-get install wine1.6
 install:
