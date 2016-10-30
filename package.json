@@ -21,6 +21,7 @@
   "bugs": {
     "url": "https://github.com/jwronline/dashboard/issues"
   },
+  "license": "CC-BY-SA-4.0",
   "homepage": "https://github.com/jwronline/dashboard#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.37.0",
