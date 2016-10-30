@@ -1,7 +1,7 @@
 lang: nl
 author:
   name: Haroen Viaene
-  email: hell@haroen.me
+  email: hello@haroen.me
   twitter: '@haroenv'
 title: dashboard
 description: 'A dashboard for a shuttle mission. See also: https://github.com/jwronline/shuttle-command'
