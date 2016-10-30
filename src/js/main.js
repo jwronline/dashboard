@@ -1,8 +1,8 @@
 ---
 ---
-
+//@flow
 // places to put data in
-var map = document.getElementById('map');
+var mapElement = document.getElementById('map');
 var data = document.getElementById('data');
 var counter = document.getElementById('counter');
 var days = document.getElementById('days');
@@ -37,16 +37,16 @@ var getJSON = function(url) {
 }
 
 if (!navigator.onLine) {
-  map.innerHTML = '<img src="src/img/map.png" alt="map of the world">';
-  var pollISS = function() {
+  mapElement.innerHTML = '<img src="src/img/map.png" alt="map of the world">';
+  function pollISS() {
     console.warn('you\'re currently offline.');
-  };
+  }
 } else {
   /**
    * Mapbox gl initialising
    */
   mapboxgl.accessToken = 'pk.eyJ1IjoiandyIiwiYSI6ImNpbWFwcWk1cjAwMXR3ZG04d3RxdDljZDMifQ.z794EtjWIrwwHICvYXs5Ww';
-  var map = new mapboxgl.Map({
+  const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/jwr/cimaq5nsu009lbkm0gpqx3e2o',
     center: [0, 10],
@@ -94,37 +94,43 @@ if (!navigator.onLine) {
    * needs:
    * - a mapbox gl map in '#map' and variable name 'map'
    */
-  var pollISS = function() {
+  function pollISS() {
 
-    var url = 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=';
-    // get approximately the last two orbits
-    var date = new Date();
-    for (var i = 230; i > 0; i -= 5) {
-      if (i !== 230) {
-        url += ',';
+    /**
+     * Get the last timestamps in a range
+     * @param  {number} max      The amount of intervals to go back
+     * @param  {number} interval amount of minutes between two timestamps
+     * @return {string}          ,-joined string of the intervals
+     */
+    function getLastTimestamps(max, interval) {
+      var timestamps = [];
+      var now = new Date();
+      for (var i = 230; i > 0; i -= 5) {
+        var temp = new Date();
+        temp.setMinutes(now.getMinutes() - i);
+        timestamps.push(Math.floor(temp.getTime() / 1000));
       }
-      var temp = new Date();
-      temp.setMinutes(date.getMinutes() - i);
-      url += Math.floor(temp.getTime() / 1000);
+      return timestamps.join(',');
     }
-    getJSON(url)
+
+    getJSON(`https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=${getLastTimestamps(230, 5)}`)
       .then(function(data) {
 
-        var geojson = {
+        const geojson = {
           "type": "FeatureCollection",
           "features": []
         }
 
-        var current = {
+        const current = {
             "type": "Point",
             "coordinates": [data[data.length - 1].longitude, data[data.length - 1].latitude]
         }
 
         point.setData(current);
 
-        var coords = [];
+        let coords = [];
 
-        for (var i in data) {
+        for (let i in data) {
           if (i != 0) {
             if (data[i].longitude - data[i - 1].longitude > 200 || data[i].longitude - data[i - 1].longitude < -200) {
               geojson.features.push({
@@ -149,14 +155,14 @@ if (!navigator.onLine) {
           }
         });
         line.setData(geojson);
-      }),
-      function(status) {
+      })
+      .catch((status) => {
         console.warn(status);
-      };
+      });
   }
 
   pollISS();
-  setInterval(function() {
+  setInterval(() => {
     pollISS();
   }, 10000);
 }
