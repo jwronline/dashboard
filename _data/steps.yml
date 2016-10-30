@@ -372,6 +372,7 @@
 
 -
   name: OMS voltooid
+  video: samson.mp4
   text:
     - klaar voor voltooiing OMS-2
     - 'SSME 1: 0.0%'
@@ -390,6 +391,7 @@
 
 -
   name: inkomend bericht
+  video: frimout.mp4
   text:
     - 'belangrijk: inkomend bericht'
     - PAO deelt deze nu mee
