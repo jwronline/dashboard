@@ -13,7 +13,7 @@ css:
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css'
 scripts:
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js'
-  - 'https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'
+  # - 'https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'
   - 'src/js/main.js'
 favicon: 'src/img/favicon-268.png'
 sass:
