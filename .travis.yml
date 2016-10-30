@@ -6,6 +6,8 @@ branches:
   - gh-pages
 before_install:
   - rvm install 2.2.2
+  - sudo apt-get -qq update
+  - sudo apt-get install wine
 install:
   - bundle install
   - npm install
