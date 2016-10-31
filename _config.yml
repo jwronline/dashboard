@@ -1,7 +1,7 @@
 lang: nl
 author:
   name: Haroen Viaene
-  email: hell@haroen.me
+  email: hello@haroen.me
   twitter: '@haroenv'
 title: dashboard
 description: 'A dashboard for a shuttle mission. See also: https://github.com/jwronline/shuttle-command'
@@ -13,9 +13,9 @@ css:
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.css'
 scripts:
   - 'https://api.tiles.mapbox.com/mapbox-gl-js/v0.16.0/mapbox-gl.js'
-  - 'https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'
+  # - 'https://api.mapbox.com/mapbox.js/plugins/arc.js/v0.1.0/arc.js'
   - 'src/js/main.js'
-favicon: 'src/img/favicon-264.png'
+favicon: 'src/img/favicon-268.png'
 sass:
   style: compressed
 exclude:

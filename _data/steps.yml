@@ -224,18 +224,16 @@
     - 2
     - 1
     - OMS ingeschakeld
-    - "SSME 1: 50.0%"
-    - "SSME 2: 50.0%"
-    - "SSME 3: 50.0%"
+    - "OMS Engine 1: 50.0%"
+    - "OMS Engine 2: 50.0%"
 
 ## On-Orbit
 -
   name: OMS uitschakelen
   text:
     - OMS burn voltooid
-    - "SSME 1: 0.0%"
-    - "SSME 2: 0.0%"
-    - "SSME 3: 0.0%"
+    - "OMS Engine 1: 0.0%"
+    - "OMS Engine 2: 0.0%"
 
 -
   name: orbitrapport
@@ -375,9 +373,8 @@
   video: samson.mp4
   text:
     - klaar voor voltooiing OMS-2
-    - 'SSME 1: 0.0%'
-    - 'SSME 2: 0.0%'
-    - 'SSME 3: 0.0%'
+    - 'OMS Engine 1: 0.0%'
+    - 'OMS Engine 2: 0.0%'
     - OMS-2 voltooid
 
 -
@@ -592,9 +589,8 @@
     - 2
     - 1
     - OMS ingeschakeld
-    - "SSME 1: 50.0%"
-    - "SSME 2: 50.0%"
-    - "SSME 3: 50.0%"
+    - "OMS Engine 1: 50.0%"
+    - "OMS Engine 2: 50.0%"
 
 -
   name: start APU's

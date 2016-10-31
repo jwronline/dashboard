@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "electron _site/app.js",
-    "build": "electron-packager _site --platform=linux,darwin --icon=_site/src/img/favicon.icns --arch=x64 --overwrite;electron-packager _site --platform=win32 --icon=_site/src/img/favicon.ico --arch=x64 --overwrite"
+    "build": "electron-packager _site --platform=linux,darwin --icon=_site/src/img/favicon.icns --arch=x64 --overwrite;electron-packager _site --platform=win32 --icon=_site/src/img/favicon.ico --arch=x64 --overwrite",
+    "test": "xo"
   },
   "repository": {
     "type": "git",
@@ -25,9 +26,15 @@
   "homepage": "https://github.com/jwronline/dashboard#readme",
   "devDependencies": {
     "electron": "^1.4.4",
-    "electron-packager": "^8.2.0"
+    "electron-packager": "^8.2.0",
+    "xo": "^0.17.0"
   },
   "dependencies": {
     "opn": "^4.0.2"
+  },
+  "xo": {
+    "space": true,
+    "envs": ["browser"],
+    "globals": ["mapboxgl"]
   }
 }
