@@ -246,6 +246,7 @@
 
 -
   name: Ontplooien vrachtdeuren
+  video: payload-bay-doors.mp4
   text:
     - begin ontplooien vrachtdeuren
     - ...
